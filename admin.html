@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Add Blog</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-panel">
+    <h2>📝 Publish New Blog</h2>
+
+    <input id="title" placeholder="Blog Title">
+    <input id="image" placeholder="Image filename (example.jpg)">
+    <select id="category">
+        <option>Mental Health</option>
+        <option>Nutrition</option>
+        <option>Homeopathy</option>
+        <option>Pregnancy</option>
+    </select>
+    <textarea id="content" placeholder="Write full blog..."></textarea>
+
+    <button onclick="publishBlog()">✅ Publish Blog</button>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

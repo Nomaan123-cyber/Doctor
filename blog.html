@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dr. Fabiha’s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body class="light-mode">
+
+<nav class="navbar">
+    <div class="logo">Dr. Fabiha Khan</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="telemedicine.html">Telemedicine</a></li>
+        <li><a href="blog.html" class="active-link">Blog</a></li>
+    </ul>
+    <button id="toggleTheme">🌙</button>
+</nav>
+
+<header class="blog-hero">
+    <h1>✨ Dr. Fabiha’s Wellness Blog ✨</h1>
+    <p>Mental Health • Nutrition • Homeopathy • Women’s Wellness</p>
+</header>
+
+<!-- ✅ CATEGORY FILTER -->
+<div class="category-bar" id="categoryBar"></div>
+
+<section class="blog-grid" id="blogGrid"></section>
+
+<!-- ✅ BLOG MODAL -->
+<div class="blog-modal" id="blogModal">
+    <div class="blog-modal-card">
+        <span class="close-btn" id="closeBlog">×</span>
+        <h2 id="modalTitle"></h2>
+        <img id="modalImage" src="uk-student-mental.png" alt="uk-student-mental">
+        <p id="modalContent"></p>
+    </div>
+</div>
+
+<script src="blog.js"></script>
+</body>
+</html>
