@@ -480,3 +480,241 @@ body {
     text-decoration: none;
     box-shadow: 0 0 30px rgba(37,211,102,0.8);
 }
+
+
+/* ===== PREMIUM FOOTER ===== */
+.footer {
+    padding: 80px 30px 40px;
+}
+
+.footer-glass {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 40px 30px;
+    border-radius: 40px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(28px);
+    box-shadow:
+            0 40px 140px rgba(0,0,0,0.35),
+            0 0 120px rgba(120,115,245,0.45);
+}
+
+.dark-mode .footer-glass {
+    background: rgba(0,0,0,0.45);
+}
+
+/* GRID */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* BRAND */
+.footer-brand h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.footer-brand p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+/* LINKS */
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.85;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    transform: translateX(6px);
+    color: #7873f5;
+}
+
+/* CONTACT */
+.footer-contact p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* SOCIAL */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-icon {
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 13px;
+    color: white;
+    background: linear-gradient(135deg, #007cf0, #00dfd8);
+    box-shadow: 0 10px 30px rgba(0,140,255,0.7);
+    transition: all 0.35s cubic-bezier(.21,1.02,.73,1);
+}
+
+.social-icon:hover {
+    transform: translateY(-6px) scale(1.1);
+    box-shadow:
+            0 18px 50px rgba(0,140,255,0.9),
+            0 0 40px rgba(255,110,196,0.6);
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.25);
+    padding-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.footer-dev span {
+    font-weight: 700;
+    background: linear-gradient(135deg, #00dfd8, #007cf0);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 14px rgba(0,200,255,0.8);
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ============================= */
+/* ✅ GLOBAL MOBILE RESPONSIVE FIX */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .navbar {
+        padding: 14px 18px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        flex-direction: column;
+        padding: 120px 20px 40px;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 340px;
+        margin-top: 30px;
+    }
+
+    /* SERVICES */
+    .services-section {
+        padding: 80px 20px;
+    }
+
+    .services-title {
+        font-size: 30px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* TESTIMONIAL */
+    .testimonial-section {
+        padding: 80px 20px;
+    }
+
+    .testimonial-track {
+        gap: 20px;
+    }
+
+    .testimonial-card {
+        min-width: 260px;
+    }
+
+    /* PAYMENT */
+    .payment-section {
+        padding: 80px 20px;
+    }
+
+    .payment-card {
+        padding: 28px;
+    }
+
+    /* CONTACT */
+    .contact-section {
+        padding: 80px 20px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* FOOTER */
+    .footer {
+        padding: 60px 20px 20px;
+    }
+
+    .footer-glass {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-brand h2 {
+        font-size: 22px;
+    }
+
+    .footer-grid {
+        gap: 28px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}

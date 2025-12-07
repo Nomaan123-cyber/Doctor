@@ -229,3 +229,72 @@ body.dark-mode {
     background: linear-gradient(135deg, #ff6ec4, #7873f5);
     color: white;
 }
+@media (max-width: 768px) {
+
+    .blog-hero h1 {
+        font-size: 28px;
+    }
+
+    .blog-grid {
+        padding: 30px 20px 80px;
+        grid-template-columns: 1fr;
+    }
+
+    .blog-modal-card {
+        padding: 26px 20px;
+        max-width: 92%;
+    }
+
+    .category-bar {
+        padding: 0 12px;
+    }
+}
+
+/* ============================= */
+/* ✅ ABOUT PAGE MOBILE FIX */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    /* ABOUT SECTION WRAPPER */
+    .about-section {
+        padding: 120px 20px 60px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* ABOUT CARD */
+    .about-card {
+        padding: 34px 22px;
+        border-radius: 28px;
+    }
+
+    /* HEADINGS */
+    .about-card h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .about-card h3 {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    /* PARAGRAPH TEXT */
+    .about-text {
+        font-size: 15px;
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    /* TAGS */
+    .about-tags {
+        gap: 10px;
+        margin-top: 25px;
+    }
+
+    .about-tags span {
+        padding: 8px 18px;
+        font-size: 12px;
+    }
+}
