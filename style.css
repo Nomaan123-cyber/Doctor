@@ -583,16 +583,18 @@ body {
 
 /* BOTTOM BAR */
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.25);
+    margin-top: 25px;
     padding-top: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    text-align: center;
     font-size: 13px;
-    opacity: 0.85;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
+
 
 .footer-dev span {
     font-weight: 700;
