@@ -126,3 +126,69 @@ END:VCALENDAR`;
     link.download = "appointment.ics";
     link.click();
 }
+
+// ===============================
+// ✅ UK → LOCAL TIME SLOT CONVERTER
+// ===============================
+
+// ✅ Base UK Time Slots (24-hour format)
+const ukTimeSlots = [
+    "10:00",
+    "12:00",
+    "15:00",
+    "18:00"
+];
+
+const timeSelect = document.getElementById("timeSlotSelect");
+const slotUK = document.getElementById("slotUK");
+const slotLocal = document.getElementById("slotLocal");
+
+function convertUKtoLocal(ukTime) {
+    const userTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    const now = new Date();
+    const [hour, minute] = ukTime.split(":");
+
+    // ✅ Create UK date
+    const ukDate = new Date(
+        now.toLocaleString("en-US", { timeZone: "Europe/London" })
+    );
+
+    ukDate.setHours(hour);
+    ukDate.setMinutes(minute);
+
+    // ✅ Convert to user local time
+    const localDate = new Date(
+        ukDate.toLocaleString("en-US", { timeZone: userTZ })
+    );
+
+    return {
+        uk: ukDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        local: localDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        tz: userTZ
+    };
+}
+
+// ✅ Populate Time Slots
+if (timeSelect) {
+    ukTimeSlots.forEach(time => {
+        const converted = convertUKtoLocal(time);
+
+        const option = document.createElement("option");
+        option.value = `${converted.uk} UK → ${converted.local} ${converted.tz}`;
+        option.textContent = `${converted.uk} UK → ${converted.local} (Your Time)`;
+
+        timeSelect.appendChild(option);
+    });
+
+    // ✅ Store Hidden Values for Email
+    timeSelect.addEventListener("change", () => {
+        const selected = timeSelect.value;
+        const parts = selected.split("→");
+
+        if (parts.length === 2) {
+            slotUK.value = parts[0].trim();
+            slotLocal.value = parts[1].trim();
+        }
+    });
+}

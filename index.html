@@ -164,13 +164,13 @@
             <input type="email" name="email" placeholder="Email Address" required>
 
             <!-- ✅ Time Slot Picker -->
-            <select name="slot" required>
+            <select name="slot" id="timeSlotSelect" required>
                 <option value="">Select Preferred Time Slot</option>
-                <option>10:00 AM – 11:00 AM</option>
-                <option>12:00 PM – 1:00 PM</option>
-                <option>3:00 PM – 4:00 PM</option>
-                <option>6:00 PM – 7:00 PM</option>
             </select>
+
+            <input type="hidden" name="slot_uk" id="slotUK">
+            <input type="hidden" name="slot_local" id="slotLocal">
+
 
             <textarea name="message" placeholder="Describe your problem or sickness"></textarea>
 
