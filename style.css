@@ -725,6 +725,10 @@ body {
 /* ✅ TIME SLOT SELECT STYLING */
 /* =============================== */
 
+/* =============================== */
+/* ✅ FIXED TIME SLOT SELECT – CLEAN & MATCHED */
+/* =============================== */
+
 .booking-form select {
     width: 100%;
     padding: 14px 16px;
@@ -736,23 +740,12 @@ body {
     font-size: 15px;
     font-family: inherit;
 
-    background: rgba(255,255,255,0.96);
+    background: rgba(255,255,255,0.96);   /* ✅ clean background */
     color: #111827;
 
-    appearance: none;       /* ✅ remove default arrow */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-
-    background-image:
-            linear-gradient(45deg, transparent 50%, #8b5cf6 50%),
-            linear-gradient(135deg, #8b5cf6 50%, transparent 50%);
-    background-position:
-            calc(100% - 22px) 21px,
-            calc(100% - 16px) 21px;
-    background-size:
-            6px 6px,
-            6px 6px;
-    background-repeat: no-repeat;
 
     transition:
             border 0.25s ease,
@@ -760,15 +753,11 @@ body {
             background 0.25s ease;
 }
 
-/* ✅ DARK MODE SELECT */
+/* ✅ DARK MODE SELECT – NOW MATCHES ALL OTHER INPUTS */
 .dark-mode .booking-form select {
-    background: rgba(15,23,42,0.95);
+    background: rgba(15,23,42,0.95);     /* ✅ SAME AS INPUTS */
     border: 1px solid rgba(148,163,184,0.8);
     color: #e5e7eb;
-
-    background-image:
-            linear-gradient(45deg, transparent 50%, #93c5fd 50%),
-            linear-gradient(135deg, #93c5fd 50%, transparent 50%);
 }
 
 /* ✅ HOVER */
