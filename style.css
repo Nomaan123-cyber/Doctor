@@ -296,23 +296,48 @@ body {
 }
 
 /* BUTTON */
+./* ✅ CALM HEALTHCARE BUTTON STYLE */
 .service-btn {
     margin-top: 25px;
-    padding: 14px 32px;
-    border-radius: 40px;
+    padding: 14px 36px;
+    border-radius: 999px;
     border: none;
     cursor: pointer;
     font-size: 15px;
-    background: linear-gradient(135deg, #ff6ec4, #7873f5);
-    color: white;
-    box-shadow: 0 12px 35px rgba(120,115,245,0.7);
-    transition: 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    /* 🌿 Calm Healthcare Gradient */
+    background: linear-gradient(
+            135deg,
+            #6ee7b7,   /* mint green */
+            #3b82f6    /* soft medical blue */
+    );
+
+    color: #003333;
+
+    box-shadow:
+            0 10px 30px rgba(59,130,246,0.35),
+            inset 0 0 0 rgba(255,255,255,0.4);
+
+    transition: all 0.35s cubic-bezier(.21,1.02,.73,1);
 }
 
+/* ✅ SOFT PREMIUM HOVER */
 .service-btn:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 20px 60px rgba(120,115,245,0.9);
+    transform: translateY(-5px) scale(1.06);
+
+    background: linear-gradient(
+            135deg,
+            #5eead4,   /* aqua mint */
+            #60a5fa    /* sky blue */
+    );
+
+    box-shadow:
+            0 18px 50px rgba(59,130,246,0.45),
+            0 0 30px rgba(110,231,183,0.5);
 }
+
 
 /* MOBILE */
 @media (max-width: 900px) {
