@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
+
 
 
 </head>
@@ -115,45 +121,68 @@
 <!-- ===== CONTACT & BOOKING ===== -->
 <section class="contact-section" id="appointment">
 
-    <h2 class="services-title">📞 Book Online Appointment</h2>
+    <h2 class="contact-heading">📞 Book Online Appointment</h2>
 
     <div class="contact-container">
 
-        <!-- SOCIAL + INFO -->
+        <!-- LEFT CARD -->
         <div class="contact-info">
             <h3>Connect With Us</h3>
 
-            <p>📧 Email: <strong>kfabiha81@gmail.com</strong></p>
+            <p class="contact-email">
+                📧 Email: <strong>kfabiha81@gmail.com</strong>
+            </p>
 
             <div class="social-links">
-                <a href="#" class="social twitter" aria-label="Twitter">
+                <a href="#" class="social twitter">
                     <i class="fa-brands fa-x-twitter"></i>
                 </a>
-
-                <a href="https://www.instagram.com/dr_fabiha_sayed/" class="social instagram" aria-label="Instagram" target="_blank">
+                <a href="#" class="social instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-
-                <a href="#" class="social facebook" aria-label="Facebook">
+                <a href="#" class="social facebook">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
             </div>
-
         </div>
 
-        <!-- BOOKING FORM -->
-        <form class="booking-form">
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Surname" required>
-            <input type="text" placeholder="Contact Number" required>
-            <input type="text" placeholder="Location" required>
-            <input type="email" placeholder="Email Address" required>
-            <textarea rows="4" placeholder="Describe your problem or sickness"></textarea>
+        <!-- ✅ CONNECTOR BETWEEN CARDS -->
+        <div class="card-connector">
+            <span class="wave"></span>
+            <span class="arrow">→</span>
+        </div>
 
-            <button type="submit" class="cta-btn">Submit Appointment Request</button>
+        <!-- RIGHT FORM -->
+        <form class="booking-form" id="bookingForm">
+            <input type="hidden" name="meeting_link" value="https://meet.google.com/new">
+
+
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="surname" placeholder="Surname" required>
+            <input type="text" name="contact" placeholder="Contact Number" required>
+            <input type="text" name="location" placeholder="Location" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <!-- ✅ Time Slot Picker -->
+            <select name="slot" required>
+                <option value="">Select Preferred Time Slot</option>
+                <option>10:00 AM – 11:00 AM</option>
+                <option>12:00 PM – 1:00 PM</option>
+                <option>3:00 PM – 4:00 PM</option>
+                <option>6:00 PM – 7:00 PM</option>
+            </select>
+
+            <textarea name="message" placeholder="Describe your problem or sickness"></textarea>
+
+            <button type="submit" class="submit-btn">
+                Submit Appointment Request
+            </button>
+
         </form>
 
+
     </div>
+
 </section>
 
 <!--&lt;!&ndash; ===== PAYMENT UI ===== &ndash;&gt;-->
@@ -238,9 +267,11 @@
 
     </div>
 </footer>
-<a href="https://wa.me/447469816500" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/447469816500?text=New+appointment+request+received+on+website"
+   class="whatsapp-float" target="_blank">
     💬
 </a>
+
 
 </body>
 </html>
