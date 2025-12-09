@@ -139,37 +139,57 @@ const ukTimeSlots = [
     "18:00"
 ];
 
+// ===============================
+// ✅ GLOBAL UK → LOCAL TIME SLOT SYSTEM (FIXED)
+// ===============================
+
+// ✅ Base UK Time Slots (24-hour format, UK time)
+const ukTimeSlots = [
+    "10:00",
+    "12:00",
+    "15:00",
+    "18:00"
+];
+
 const timeSelect = document.getElementById("timeSlotSelect");
 const slotUK = document.getElementById("slotUK");
 const slotLocal = document.getElementById("slotLocal");
 
+// ✅ TRUE UK → LOCAL TIME CONVERSION
 function convertUKtoLocal(ukTime) {
     const userTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     const now = new Date();
-    const [hour, minute] = ukTime.split(":");
+    const [hour, minute] = ukTime.split(":").map(Number);
 
-    // ✅ Create UK date
+    // ✅ Create time in UK explicitly using UTC offset
     const ukDate = new Date(
-        now.toLocaleString("en-US", { timeZone: "Europe/London" })
+        now.toLocaleString("en-GB", { timeZone: "Europe/London" })
     );
 
-    ukDate.setHours(hour);
-    ukDate.setMinutes(minute);
+    ukDate.setHours(hour, minute, 0, 0);
 
-    // ✅ Convert to user local time
+    // ✅ Convert to LOCAL browser time safely
     const localDate = new Date(
-        ukDate.toLocaleString("en-US", { timeZone: userTZ })
+        ukDate.toLocaleString("en-US", {
+            timeZone: userTZ
+        })
     );
 
     return {
-        uk: ukDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-        local: localDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        uk: ukDate.toLocaleTimeString("en-GB", {
+            hour: "2-digit",
+            minute: "2-digit"
+        }),
+        local: localDate.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit"
+        }),
         tz: userTZ
     };
 }
 
-// ✅ Populate Time Slots
+// ✅ Populate Time Slots Correctly
 if (timeSelect) {
     ukTimeSlots.forEach(time => {
         const converted = convertUKtoLocal(time);
