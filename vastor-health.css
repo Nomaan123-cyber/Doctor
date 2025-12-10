@@ -3008,3 +3008,300 @@ body.dark-mode .stay-hydrated span {
     }
 
 }
+
+ /*✅ WATCH POSITION NEXT TO IPHONE*/
+.watch-wrapper {
+    position: relative;
+    margin-left: -120px;
+    margin-top: 60px;
+    right: 200px;
+}
+
+/* ✅ TILT EFFECT (WORN LOOK) */
+.watch-tilt {
+    transform: rotate(-12deg);
+}
+
+/* ✅ APPLE WATCH ULTRA BODY */
+/* ================================
+✅ APPLE WATCH ULTRA — FINAL BUILD
+================================ */
+
+/* ✅ WATCH WRAPPER (NO OVERLAP EVER) */
+/*.watch-wrapper {*/
+/*    position: absolute;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    !*align-items: center;*!*/
+/*    z-index: 2;*/
+/*}*/
+
+/*!* ✅ TILTED LOOK *!*/
+/*.watch-tilt {*/
+/*    transform: rotate(-12deg);*/
+/*}*/
+
+/* ✅ WATCH BODY (DARK TITANIUM ULTRA) */
+.apple-watch-ultra {
+    width: 200px;
+    height: 240px;
+    background: linear-gradient(180deg, #1f2937, #020617);
+    border-radius: 46px;
+    padding: 5px;
+    position: relative;
+    box-shadow:
+            0 30px 90px rgba(0,0,0,0.65),
+            inset 0 0 0 2px rgba(255,255,255,0.06);
+}
+
+/* ✅ WHITE WATCH SCREEN (MATCHES IPHONE UI) */
+.watch-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #ffffff, #f1f5f9);
+    border-radius: 42px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    color: #020617;
+}
+
+/* ✅ WATCH STATUS BAR */
+.watch-status-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* ✅ SAFE AREA FROM CURVED EDGES */
+    padding: 2px 8px 0;
+
+    font-size: 11px;
+    font-weight: 800;
+    color: #020617;
+
+    box-sizing: border-box;
+}
+
+
+/* ✅ BATTERY ICON */
+/*.battery-icon {*/
+/*    display: inline-block;*/
+/*    width: 16px;*/
+/*    height: 8px;*/
+/*    border: 1.5px solid #020617;*/
+/*    border-radius: 3px;*/
+/*    position: relative;*/
+/*}*/
+
+/*.battery-icon::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    right: -4px;*/
+/*    top: 2px;*/
+/*    width: 3px;*/
+/*    height: 4px;*/
+/*    background: #020617;*/
+/*    border-radius: 1px;*/
+/*}*/
+
+/*.battery-icon::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    left: 1px;*/
+/*    top: 1px;*/
+/*    height: 4px;*/
+/*    width: 70%;*/
+/*    background: linear-gradient(90deg, #22c55e, #16a34a);*/
+/*    border-radius: 2px;*/
+/*}*/
+
+/* ✅ WATCH BATTERY — NO PERCENT, NO CAP, COLOR BY LEVEL */
+.battery-icon {
+    --battery-level: 0.75;              /* fallback if JS not available */
+    --battery-color: #22c55e;           /* default green */
+
+    display: inline-block;
+    width: 16px;
+    height: 8px;
+    border: 1.5px solid #020617;
+    border-radius: 3px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* ✅ REMOVE CAP COMPLETELY */
+.battery-icon::after {
+    content: none;
+}
+
+/* ✅ FILL WIDTH & COLOR DRIVEN BY CSS VARS */
+.battery-icon::before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    height: 4px;
+    width: calc(var(--battery-level) * 100% - 2px);
+    background: var(--battery-color);
+    border-radius: 2px;
+}
+
+/* ✅ WELCOME TEXT */
+.watch-welcome {
+    text-align: center;
+    margin-top: 6px;
+}
+
+.watch-welcome h4 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #020617;
+}
+
+.watch-welcome p {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+/* ✅ STEPS RING */
+.watch-steps-ring {
+    position: relative;
+    margin-top: 14px;
+}
+
+.watch-steps-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.watch-steps-text h4 {
+    font-size: 16px;
+    font-weight: 900;
+    color: #020617;
+}
+
+.watch-steps-text p {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+/* ✅ MEAL TIME POPUP (APPLE GRADIENT) */
+.watch-meal-popup {
+    position: absolute;
+    bottom: 12px;
+    background: linear-gradient(90deg, #22c55e, #3b82f6);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.watch-meal-popup span {
+    display: block;
+    font-size: 10px;
+    opacity: 0.9;
+}
+
+/* ✅ SEAMLESS CONNECTION TEXT */
+.watch-sync-text {
+    margin-top: 14px;
+    margin-right: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: black;
+    /*text-align: center;*/
+    max-width: 220px;
+}
+
+/* ================================
+✅ IPHONE + WATCH LAYOUT FIX
+================================ */
+
+/*.device-showcase {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    gap: 120px;*/
+/*    position: relative;*/
+/*}*/
+
+/*.iphone-frame,*/
+/*.watch-wrapper {*/
+/*    position: relative !important;*/
+/*    z-index: 2;*/
+/*}*/
+
+/*.watch-wrapper {*/
+/*    margin-left: 0 !important;*/
+/*}*/
+
+/* ✅ MOBILE STACK MODE */
+@media (max-width: 900px) {
+    .device-showcase {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .watch-wrapper {
+        margin-top: 20px;
+        transform: scale(0.9);
+    }
+}
+
+/* ✅ FINAL IPHONE + WATCH NON-OVERLAP LAYOUT */
+/*.device-showcase {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    gap: 140px;*/
+/*    margin-top: 60px;*/
+/*    position: relative;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/* ✅ FORCE BOTH DEVICES TO RESPECT SPACE */
+/*.iphone-frame,*/
+/*.watch-wrapper {*/
+/*    position: relative !important;*/
+/*    z-index: 2;*/
+/*}*/
+
+/*!* ✅ KILL ANY NEGATIVE MARGINS *!*/
+/*.watch-wrapper {*/
+/*    margin-left: 0 !important;*/
+/*}*/
+
+/*!* ✅ MOBILE STACK FIX *!*/
+/*@media (max-width: 900px) {*/
+/*    .device-showcase {*/
+/*        flex-direction: column;*/
+/*        gap: 60px;*/
+/*    }*/
+
+/*    .iphone-frame {*/
+/*        transform: scale(0.95);*/
+/*    }*/
+
+/*    .watch-wrapper {*/
+/*        transform: scale(0.9);*/
+/*    }*/
+/*}*/
+
+#watchStepsRing {
+    transition: stroke-dashoffset 0.6s cubic-bezier(.4,0,.2,1);
+}
+
+#watchStepsValue {
+    transition: all 0.2s ease;
+}

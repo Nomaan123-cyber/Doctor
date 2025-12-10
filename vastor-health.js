@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const phoneStepDisplay = document.querySelector(".app-pie-center h2");
     if (phoneStepDisplay) {
         let steps = 0;
-        const stepTarget = 7200;
+        const stepTarget = 7238;
         const run = setInterval(() => {
             steps += 48;
             if (steps >= stepTarget) {
@@ -325,8 +325,8 @@ if (heroMealConsult) {
 /* ===============================
 📷 AI MEAL SNAPSHOT (PHOTO PLACEHOLDER)
 =============================== */
-const mealBtn    = document.getElementById("openMealCamera");
-const mealInput  = document.getElementById("mealPhotoInput");
+const mealBtn = document.getElementById("openMealCamera");
+const mealInput = document.getElementById("mealPhotoInput");
 const mealResult = document.getElementById("mealPhotoResult");
 
 if (mealBtn && mealInput && mealResult) {
@@ -348,7 +348,7 @@ if (mealBtn && mealInput && mealResult) {
 setInterval(() => {
     const t = document.getElementById("iphoneTime");
     const now = new Date();
-    t.innerText = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    t.innerText = now.toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"});
 }, 1000);
 
 // ✅ LIVE BATTERY PERCENT (Laptop / Mobile / Desktop)
@@ -418,4 +418,110 @@ style.innerHTML = `
   to { filter: brightness(1.4); }
 }`;
 document.head.appendChild(style);
+
+
+/* ✅ LIVE TIME SYNC */
+function updateWatchTime() {
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    document.getElementById("watchTime").innerText = `${hours}:${minutes}`;
+}
+
+setInterval(updateWatchTime, 1000);
+updateWatchTime();
+
+/* ✅ LIVE BATTERY SYNC (REAL DEVICE if supported) */
+if (navigator.getBattery) {
+    navigator.getBattery().then(function (battery) {
+        function updateBattery() {
+            const percent = Math.round(battery.level * 100);
+            document.getElementById("watchBattery").innerText = percent;
+        }
+
+        updateBattery();
+        battery.addEventListener("levelchange", updateBattery);
+    });
+} else {
+    document.getElementById("watchBattery").innerText = "100";
+}
+
+// ✅ APPLE WATCH BATTERY SYNC
+const watchBatteryIcon = document.querySelector(".battery-icon");
+
+function applyBatteryLevel(level) {
+    if (!watchBatteryIcon) return;
+
+    // clamp 0–1
+    level = Math.max(0, Math.min(1, level));
+
+    watchBatteryIcon.style.setProperty("--battery-level", level);
+
+    let color;
+    if (level <= 0.2) {
+        // low → red
+        color = "#ef4444";
+    } else if (level <= 0.5) {
+        // medium → orange
+        color = "#f97316";
+    } else {
+        // high → green
+        color = "#22c55e";
+    }
+    watchBatteryIcon.style.setProperty("--battery-color", color);
+}
+
+// Try using the Battery Status API (not supported everywhere)
+if (navigator.getBattery && watchBatteryIcon) {
+    navigator.getBattery().then(battery => {
+        const update = () => applyBatteryLevel(battery.level);
+        update();
+        battery.addEventListener("levelchange", update);
+    }).catch(() => {
+        // fallback value if battery API blocked
+        applyBatteryLevel(0.75);
+    });
+} else {
+    // browser doesn’t expose battery → just show 75%
+    applyBatteryLevel(0.75);
+}
+
+// ✅ ANIMATE WATCH STEPS RING + NUMBER
+const watchTargetSteps = 9210;
+const watchMaxSteps = 10000;
+const watchRing = document.getElementById("watchStepsRing");
+const watchStepsText = document.getElementById("watchStepsValue");
+
+if (watchRing && watchStepsText) {
+    const circumference = 263;
+    const targetPercent = watchTargetSteps / watchMaxSteps;
+
+    let ringProgress = 0;
+    let stepCounter = 0;
+
+    const ringSpeed = 0.02;
+    const stepSpeed = Math.ceil(watchTargetSteps / 60);
+
+    function animateWatchRing() {
+        ringProgress += ringSpeed;
+        if (ringProgress >= targetPercent) ringProgress = targetPercent;
+
+        const offset = circumference * (1 - ringProgress);
+        watchRing.style.strokeDashoffset = offset;
+
+        if (stepCounter < watchTargetSteps) {
+            stepCounter += stepSpeed;
+            if (stepCounter > watchTargetSteps) stepCounter = watchTargetSteps;
+            watchStepsText.textContent = stepCounter.toLocaleString();
+        }
+
+        if (ringProgress < targetPercent) {
+            requestAnimationFrame(animateWatchRing);
+        }
+    }
+
+    animateWatchRing();
+}
+
 
