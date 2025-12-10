@@ -2909,3 +2909,52 @@ body.dark-mode .stay-hydrated span {
     }
 
 }
+
+/* ===============================
+✅ MOBILE PORTRAIT IPHONE VISIBILITY FIX
+=============================== */
+@media (max-width: 768px) {
+
+    /* ✅ FORCE VERTICAL FLOW */
+    .vastor-hero,
+    .vastor-hero-inner {
+        min-height: auto !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    /* ✅ STACK CONTENT PROPERLY */
+    .vastor-hero-inner {
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        gap: 48px !important;
+    }
+
+    /* ✅ FORCE iPHONE INTO VIEWPORT */
+    .vastor-hero-visual,
+    .hero-device,
+    .iphone-frame {
+        position: relative !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        transform: none !important;
+        scale: 1 !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    /* ✅ REMOVE LANDSCAPE-ONLY SCALING */
+    .hero-device,
+    .iphone-shell {
+        transform: none !important;
+    }
+
+    /* ✅ PREVENT CLIPPING */
+    body,
+    html {
+        overflow-x: hidden !important;
+    }
+
+}
