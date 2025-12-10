@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Dr. Fabiha Khan | Online Homeopathy Clinic</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8"/>
+    <title>Dr. Fabiha Sayed | Online Homeopathy Clinic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-
-
 
 
 </head>
@@ -117,7 +114,6 @@
 </section>
 
 
-
 <!-- ===== CONTACT & BOOKING ===== -->
 <section class="contact-section" id="appointment">
 
@@ -157,22 +153,34 @@
             <input type="hidden" name="meeting_link" value="https://meet.google.com/new">
 
 
-            <input type="text" name="first_name" placeholder="First Name" required>
-            <input type="text" name="surname" placeholder="Surname" required>
-            <input type="text" name="contact" placeholder="Contact Number" required>
-            <input type="text" name="location" placeholder="Location" required>
-            <input type="email" name="email" placeholder="Email Address" required>
+            <label>
+                <input type="text" name="first_name" placeholder="First Name" required>
+            </label>
+            <label>
+                <input type="text" name="surname" placeholder="Surname" required>
+            </label>
+            <label>
+                <input type="text" name="contact" placeholder="Contact Number" required>
+            </label>
+            <label>
+                <input type="text" name="location" placeholder="Location" required>
+            </label>
+            <label>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </label>
 
             <!-- ✅ Time Slot Picker -->
-            <select name="slot" id="timeSlotSelect" required>
-                <option value="">Select Preferred Time Slot</option>
-            </select>
+            <label for="timeSlotSelect"></label><select name="slot" id="timeSlotSelect" required>
+            <option value="">Select Preferred Time Slot</option>
+        </select>
 
             <input type="hidden" name="slot_uk" id="slotUK">
             <input type="hidden" name="slot_local" id="slotLocal">
 
 
-            <textarea name="message" placeholder="Describe your problem or sickness"></textarea>
+            <label>
+                <textarea name="message" placeholder="Describe your problem or sickness"></textarea>
+            </label>
 
             <button type="submit" class="submit-btn">
                 Submit Appointment Request
@@ -230,7 +238,7 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="telemedicine.html">Telemedicine</a>
-<!--                <a href="blog.html">Blog</a>-->
+                <!--                <a href="blog.html">Blog</a>-->
                 <a href="#appointment">Book Appointment</a>
             </div>
 
@@ -242,16 +250,16 @@
                 <p>🕒 Online Consultations Available</p>
             </div>
 
-<!--            &lt;!&ndash; SOCIAL &ndash;&gt;-->
-<!--            <div class="footer-social">-->
-<!--                <h3>Connect</h3>-->
-<!--                <div class="social-icons">-->
-<!--                    <a href="#" class="social-icon">Twitter</a>-->
-<!--                    <a href="#" class="social-icon">Instagram</a>-->
-<!--                    <a href="#" class="social-icon">Facebook</a>-->
-<!--                    <a href="https://wa.me/447000000000" class="social-icon">WhatsApp</a>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            &lt;!&ndash; SOCIAL &ndash;&gt;-->
+            <!--            <div class="footer-social">-->
+            <!--                <h3>Connect</h3>-->
+            <!--                <div class="social-icons">-->
+            <!--                    <a href="#" class="social-icon">Twitter</a>-->
+            <!--                    <a href="#" class="social-icon">Instagram</a>-->
+            <!--                    <a href="#" class="social-icon">Facebook</a>-->
+            <!--                    <a href="https://wa.me/447000000000" class="social-icon">WhatsApp</a>-->
+            <!--                </div>-->
+            <!--            </div>-->
 
         </div>
 
@@ -262,6 +270,12 @@
             </p>
 
             <p>© 2025 Dr. Fabiha Sayed. All Rights Reserved.</p>
+
+            <a class="vastor-health-btn" href="vastor-health.html">
+                <i class="fa-solid fa-heart-pulse"></i> Download VastoR Health
+            </a>
+
+
         </div>
 
 

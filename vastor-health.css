@@ -1,0 +1,2687 @@
+/* =============================== */
+/* ✅ GLOBAL BASE */
+/* =============================== */
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ✅ THEMES */
+.light-mode {
+    background: #e6f3f5;
+    color: #020617;
+}
+
+.dark-mode {
+    background: #020617;
+    color: #e5e7eb;
+}
+
+/* =============================== */
+/* ✅ NAVBAR */
+/* =============================== */
+
+.navbar {
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(14px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+/* =============================== */
+/* ✅ DASHBOARD */
+/* =============================== */
+
+.dashboard {
+    padding: 120px 80px;
+}
+
+.dashboard-title {
+    font-size: 52px;
+    font-weight: 900;
+}
+
+.dashboard-title span {
+    background: #eaff6a;
+    padding: 8px 18px;
+    border-radius: 999px;
+}
+
+/* =============================== */
+/* ✅ GRID */
+/* =============================== */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+/* ✅ HYDRATED BADGE — CORRECT LIGHT & DARK MODE COLORS */
+
+/* LIGHT MODE → NORMAL DARK TEXT */
+body.light-mode .dashboard-title span {
+    color: black !important;
+    background: #eaff6a !important;
+    text-shadow: none !important;
+}
+
+/* DARK MODE → PURE BLACK TEXT (NO GLOW, EASY ON EYES) */
+body.dark-mode .dashboard-title span {
+    color: #020617 !important;
+    background: #eaff6a !important;
+    text-shadow: none !important;
+}
+
+
+/* =============================== */
+/* ✅ GLASS CARD */
+/* =============================== */
+
+.glass-card {
+    border-radius: 40px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.12);
+    transition: 0.35s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.16);
+}
+
+.dark-mode .glass-card {
+    background: rgba(15, 23, 42, 0.85);
+}
+
+/* =============================== */
+/* ✅ METRICS */
+/* =============================== */
+
+.metrics {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.metric span {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* =============================== */
+/* ✅ PROGRESS (FIXED BUG) */
+/* =============================== */
+
+.progress {
+    position: relative;
+    height: 180px;
+    width: 10px;
+    background: #d1fae5;
+    border-radius: 999px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: #eaff6a;
+    width: 100%;
+    height: 70%;
+    border-radius: 999px;
+    position: absolute;
+    bottom: 0;
+}
+
+/* =============================== */
+/* ✅ DRINK SELECTOR */
+/* =============================== */
+
+.drink-options {
+    display: flex;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.drink {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #f0fdfa;
+    font-size: 28px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.drink.active {
+    background: #eaff6a;
+    transform: scale(1.08);
+}
+
+/* =============================== */
+/* ✅ DRINK AMOUNT */
+/* =============================== */
+
+.drink-amount {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+/* =============================== */
+/* ✅ BAR STATS */
+/* =============================== */
+
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    height: 160px;
+    margin-top: 30px;
+}
+
+.bar {
+    width: 20px;
+    background: #c7f9cc;
+    border-radius: 999px;
+    transition: 0.3s ease;
+}
+
+.bar.active {
+    background: #eaff6a;
+    transform: scaleY(1.1);
+}
+
+/* ========================= */
+/* 🍽️ AI COOKING DASHBOARD */
+/* ========================= */
+
+.ai-cooking-dashboard {
+    padding: 120px 40px;
+    text-align: center;
+}
+
+.cook-header h2 {
+    font-size: 38px;
+    font-weight: 800;
+}
+
+/* =============================== */
+/* ✅ CUISINE SELECTOR */
+/* =============================== */
+
+.cuisine-row {
+    margin-top: 30px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cuisine {
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.cuisine.active {
+    background: linear-gradient(135deg, #34d399, #60a5fa);
+    color: white;
+}
+
+/* =============================== */
+/* ✅ COOKING METHODS */
+/* =============================== */
+
+.cook-methods {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    flex-wrap: wrap;
+}
+
+.method-card {
+    width: 160px;
+    padding: 24px;
+    border-radius: 32px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    transition: 0.3s ease;
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+}
+
+.grill {
+    background: linear-gradient(135deg, #fda4af, #fecdd3);
+}
+
+.roast {
+    background: linear-gradient(135deg, #fde68a, #facc15);
+}
+
+.bake {
+    background: linear-gradient(135deg, #bfdbfe, #60a5fa);
+}
+
+/* =============================== */
+/* ✅ MEAL GRID */
+/* =============================== */
+
+.cook-grid {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.cook-card {
+    padding: 36px;
+    border-radius: 36px;
+    text-align: left;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.15);
+    transition: 0.35s ease;
+}
+
+.cook-card:hover {
+    transform: translateY(-6px);
+}
+
+.cook-card h3 {
+    margin-bottom: 10px;
+}
+
+.cook-card span {
+    display: inline-block;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.green {
+    background: linear-gradient(135deg, #ecfeff, #d1fae5);
+}
+
+.yellow {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+}
+
+.pink {
+    background: linear-gradient(135deg, #fdf2f8, #fbcfe8);
+}
+
+/* =============================== */
+/* ✅ AI NUTRITION PILLS */
+/* =============================== */
+
+.meal-ai-summary {
+    margin-top: 60px;
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ai-pill {
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #34d399, #60a5fa);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 15px 40px rgba(52, 211, 153, 0.35);
+}
+
+/* =============================== */
+/* ✅ AI CONSULT BUTTON */
+/* =============================== */
+
+.ai-consult-btn {
+    margin-top: 16px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #34d399, #60a5fa);
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+
+    box-shadow: 0 18px 45px rgba(52, 211, 153, 0.35);
+    transition: 0.35s ease;
+}
+
+.ai-consult-btn:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 30px 80px rgba(96, 165, 250, 0.45);
+}
+
+/* =============================== */
+/* ✅ DARK MODE SUPPORT */
+/* =============================== */
+
+.dark-mode .cuisine,
+.dark-mode .method-card,
+.dark-mode .cook-card {
+    background: rgba(15, 23, 42, 0.85);
+    color: #e5e7eb;
+}
+
+.dark-mode .ai-consult-btn {
+    box-shadow: 0 20px 60px rgba(52, 211, 153, 0.45);
+}
+
+
+/* =============================== */
+/* ✅ HEALTH PIE CHART */
+/* =============================== */
+
+.health-pie-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pie-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.pie-wrapper {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin: 0 auto;
+}
+
+.health-pie-container svg {
+    transform: rotate(-90deg);
+}
+
+.pie-bg {
+    fill: none;
+    stroke: rgba(150, 150, 150, 0.15);
+    stroke-width: 26;
+}
+
+.pie {
+    fill: none;
+    stroke-width: 26;
+    stroke-linecap: round;
+    stroke-dasharray: 691;
+    stroke-dashoffset: 691;
+    transition: stroke-dashoffset 1.4s ease;
+}
+
+/* ✅ Beautiful Colors */
+.steps {
+    stroke: #34d399;
+}
+
+.distance {
+    stroke: #60a5fa;
+}
+
+.calories {
+    stroke: #f87171;
+}
+
+.sleep {
+    stroke: #a78bfa;
+}
+
+.hydration {
+    stroke: #38bdf8;
+}
+
+/* ✅ Center Stats */
+.pie-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pie-center h2 {
+    font-size: 36px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.pie-center span {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* ✅ Legend */
+.pie-legend {
+    margin-top: 26px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.pie-legend span {
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.steps-dot {
+    background: #34d399;
+}
+
+.distance-dot {
+    background: #60a5fa;
+}
+
+.calories-dot {
+    background: #f87171;
+}
+
+.sleep-dot {
+    background: #a78bfa;
+}
+
+.hydration-dot {
+    background: #38bdf8;
+}
+
+/* ✅ Dark Mode */
+.dark-mode .pie-title,
+.dark-mode .pie-center h2 {
+    color: #e5e7eb;
+}
+
+
+/* =============================== */
+/* ✅ PREMIUM MULTI RING SYSTEM */
+/* =============================== */
+
+.health-rings {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.ring-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    padding: 20px;
+    text-align: center;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+
+    transition: 0.35s ease;
+}
+
+.ring-card:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 35px 90px rgba(0, 0, 0, 0.18),
+    0 0 40px rgba(52, 211, 153, 0.25);
+}
+
+.dark-mode .ring-card {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+/* ✅ Circular Rings */
+.ring {
+    width: 80px;
+    height: 80px;
+    transform: rotate(-90deg);
+    margin-bottom: 10px;
+}
+
+.ring-bg {
+    fill: none;
+    stroke: rgba(150, 150, 150, 0.15);
+    stroke-width: 10;
+}
+
+.ring-progress {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 264;
+    stroke-dashoffset: 264;
+    transition: stroke-dashoffset 1.4s ease;
+}
+
+/* ✅ Ring Colors */
+.steps-ring {
+    stroke: #34d399;
+}
+
+.water-ring {
+    stroke: #38bdf8;
+}
+
+.sleep-ring {
+    stroke: #a78bfa;
+}
+
+.calories-ring {
+    stroke: #f87171;
+}
+
+/* ✅ Titles */
+.ring-card h4 {
+    font-size: 14px;
+    margin: 6px 0 2px;
+}
+
+.ring-card span {
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+/* ✅ Mobile */
+@media (max-width: 768px) {
+    .health-rings {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =============================== */
+/* ✅ VASTOR HEALTH HERO */
+/* =============================== */
+
+.vastor-hero {
+    min-height: 90vh;
+    padding: 120px 60px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.vastor-hero-content h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+.vastor-hero-content h1 span {
+    background: linear-gradient(135deg, #34d399, #60a5fa);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.vastor-hero-content p {
+    margin-top: 20px;
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 520px;
+}
+
+.vastor-badge {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #fde68a, #facc15);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.vastor-cta-row {
+    display: flex;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.vastor-secondary-btn {
+    padding: 14px 28px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    font-weight: 600;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+.vastor-secondary-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* ✅ Hero Visual */
+.vastor-hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-device {
+    width: 260px;
+    height: 520px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #020617, #1e293b);
+    color: white;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.35);
+}
+
+.hero-glow {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(52, 211, 153, 0.35), transparent 70%);
+    filter: blur(40px);
+}
+
+/* =============================== */
+/* ✅ DAILY HABITS */
+/* =============================== */
+
+.vastor-habits {
+    padding: 120px 50px;
+    text-align: center;
+}
+
+.vastor-habits h2 {
+    font-size: 42px;
+    font-weight: 900;
+}
+
+.vastor-habits h2 span {
+    background: linear-gradient(135deg, #60a5fa, #34d399);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.habits-subtitle {
+    margin-top: 14px;
+    max-width: 720px;
+    margin-inline: auto;
+    opacity: 0.8;
+}
+
+.habits-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+.habit-card {
+    padding: 34px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.12);
+    text-align: left;
+    transition: 0.35s ease;
+}
+
+.habit-card:hover {
+    transform: translateY(-6px);
+}
+
+.habit-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.coming-soon-banner {
+    margin-top: 60px;
+    padding: 18px 30px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #34d399, #60a5fa);
+    color: white;
+    font-weight: 700;
+    display: inline-block;
+}
+
+/* =============================== */
+/* ✅ VASTOR AI ROADMAP */
+/* =============================== */
+
+.vastor-roadmap {
+    padding: 120px 50px;
+    text-align: center;
+}
+
+.roadmap-title {
+    font-size: 44px;
+    font-weight: 900;
+}
+
+.roadmap-title span {
+    background: linear-gradient(135deg, #34d399, #60a5fa);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.roadmap-subtitle {
+    margin-top: 12px;
+    opacity: 0.8;
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+/* =============================== */
+/* ✅ TIMELINE */
+/* =============================== */
+
+.roadmap-timeline {
+    margin-top: 80px;
+    position: relative;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.roadmap-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #34d399, #60a5fa);
+    transform: translateX(-50%);
+    border-radius: 999px;
+}
+
+/* =============================== */
+/* ✅ ROADMAP ITEM */
+/* =============================== */
+
+.roadmap-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 80px;
+    align-items: center;
+}
+
+.roadmap-item:nth-child(even) {
+    direction: rtl;
+}
+
+.roadmap-item:nth-child(even) * {
+    direction: ltr;
+}
+
+.roadmap-dot {
+    position: absolute;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    background: #34d399;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.2);
+}
+
+.roadmap-card {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 32px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    max-width: 360px;
+    transition: 0.35s ease;
+}
+
+.roadmap-card:hover {
+    transform: translateY(-6px);
+}
+
+/* =============================== */
+/* ✅ PHASE LABEL */
+/* =============================== */
+
+.roadmap-phase {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #34d399, #60a5fa);
+    color: white;
+}
+
+/* =============================== */
+/* ✅ LIST */
+/* =============================== */
+
+.roadmap-card ul {
+    padding-left: 16px;
+    margin-top: 14px;
+}
+
+.roadmap-card li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* =============================== */
+/* ✅ DARK MODE */
+/* =============================== */
+
+.dark-mode .roadmap-card {
+    background: rgba(15, 23, 42, 0.9);
+    color: #e5e7eb;
+}
+
+.dark-mode .roadmap-phase {
+    background: linear-gradient(135deg, #60a5fa, #34d399);
+}
+
+/* =============================== */
+/* ✅ MOBILE */
+/* =============================== */
+
+@media (max-width: 768px) {
+    .roadmap-timeline::before {
+        left: 20px;
+    }
+
+    .roadmap-item {
+        grid-template-columns: 1fr;
+        padding-left: 40px;
+    }
+
+    .roadmap-dot {
+        left: 20px;
+    }
+}
+
+/* =============================== */
+/* ✅ AI PREDICTIVE SCORE */
+/* =============================== */
+
+.vastor-score {
+    padding: 120px 50px;
+    text-align: center;
+}
+
+.score-title {
+    font-size: 44px;
+    font-weight: 900;
+}
+
+.score-title span {
+    background: linear-gradient(135deg, #34d399, #60a5fa);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.score-subtitle {
+    margin-top: 12px;
+    opacity: 0.8;
+    max-width: 720px;
+    margin-inline: auto;
+}
+
+/* =============================== */
+/* ✅ SCORE GRID */
+/* =============================== */
+
+.score-grid {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* =============================== */
+/* ✅ SCORE CARD */
+/* =============================== */
+
+.score-card {
+    padding: 36px;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.15);
+    transition: 0.35s ease;
+}
+
+.score-card:hover {
+    transform: translateY(-6px);
+}
+
+.dark-mode .score-card {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+/* =============================== */
+/* ✅ CIRCULAR SCORE */
+/* =============================== */
+
+.score-ring {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin: auto;
+}
+
+.score-ring svg {
+    transform: rotate(-90deg);
+}
+
+.score-bg {
+    fill: none;
+    stroke: rgba(150, 150, 150, 0.2);
+    stroke-width: 14;
+}
+
+.score-progress {
+    fill: none;
+    stroke: url(#gradient);
+    stroke-width: 14;
+    stroke-linecap: round;
+    stroke-dasharray: 327;
+    stroke-dashoffset: 327;
+    transition: stroke-dashoffset 1.6s ease;
+}
+
+/* ✅ Score Center */
+.score-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-center h1 {
+    font-size: 42px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.score-center span {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* =============================== */
+/* ✅ RISK STATUS */
+/* =============================== */
+
+/*.risk-status {*/
+/*    margin-top: 24px;*/
+/*    padding: 12px 22px;*/
+/*    border-radius: 999px;*/
+/*    font-weight: 700;*/
+/*    display: inline-block;*/
+/*}*/
+
+.low {
+    background: linear-gradient(135deg, #34d399, #22c55e);
+    color: white;
+}
+
+.medium {
+    background: linear-gradient(135deg, #fde68a, #facc15);
+    color: #020617;
+}
+
+.high {
+    background: linear-gradient(135deg, #f87171, #ef4444);
+    color: white;
+}
+
+/* =============================== */
+/* ✅ FACTORS */
+/* =============================== */
+
+.score-factors h3 {
+    margin-bottom: 20px;
+}
+
+.factor {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-weight: 600;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+.dark-mode .factor {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.ai-note {
+    margin-top: 18px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* =============================== */
+/* ✅ DISCLAIMER */
+/* =============================== */
+
+.score-disclaimer {
+    margin-top: 50px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* =============================== */
+/* ✅ MOBILE */
+/* =============================== */
+
+@media (max-width: 768px) {
+    .score-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================== */
+/* ✅ STRESS & BURNOUT PREDICTOR */
+/* =============================== */
+
+.vastor-stress {
+    padding: 120px 50px;
+    text-align: center;
+}
+
+.stress-title {
+    font-size: 44px;
+    font-weight: 900;
+}
+
+.stress-title span {
+    background: linear-gradient(135deg, #f87171, #fb923c);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.stress-subtitle {
+    margin-top: 12px;
+    opacity: 0.8;
+    max-width: 740px;
+    margin-inline: auto;
+}
+
+/* =============================== */
+/* ✅ STRESS GRID */
+/* =============================== */
+
+.stress-grid {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* =============================== */
+/* ✅ STRESS CARD */
+/* =============================== */
+
+.stress-card {
+    padding: 36px;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.15);
+    transition: 0.35s ease;
+}
+
+.stress-card:hover {
+    transform: translateY(-6px);
+}
+
+.dark-mode .stress-card {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+/* =============================== */
+/* ✅ CIRCULAR STRESS METER */
+/* =============================== */
+
+.stress-meter {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin: auto;
+}
+
+.stress-meter svg {
+    transform: rotate(-90deg);
+}
+
+.stress-bg {
+    fill: none;
+    stroke: rgba(150, 150, 150, 0.2);
+    stroke-width: 16;
+}
+
+.stress-fill {
+    fill: none;
+    stroke-width: 16;
+    stroke-linecap: round;
+    stroke-dasharray: 377;
+    stroke-dashoffset: 377;
+    transition: stroke-dashoffset 1.8s ease;
+
+    stroke: url(#stressGradient); /* ✅ CORRECT */
+}
+
+
+/* ✅ Center Data */
+.stress-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stress-center h1 {
+    font-size: 42px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.stress-center span {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* =============================== */
+/* ✅ STRESS STATUS */
+/* =============================== */
+
+/*.stress-status {*/
+/*    margin-top: 26px;*/
+/*    padding: 12px 24px;*/
+/*    border-radius: 999px;*/
+/*    font-weight: 700;*/
+/*    display: inline-block;*/
+/*}*/
+
+.low-stress {
+    background: linear-gradient(135deg, #34d399, #22c55e);
+    color: white;
+}
+
+.moderate {
+    background: linear-gradient(135deg, #fde68a, #facc15);
+    color: #020617;
+}
+
+.high-stress {
+    background: linear-gradient(135deg, #f87171, #ef4444);
+    color: white;
+}
+
+/* =============================== */
+/* ✅ BURNOUT FACTORS */
+/* =============================== */
+
+.burnout-factors h3 {
+    margin-bottom: 20px;
+}
+
+.burn-factor {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-weight: 600;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+.dark-mode .burn-factor {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.stress-note {
+    margin-top: 18px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* =============================== */
+/* ✅ DISCLAIMER */
+/* =============================== */
+
+.stress-warning {
+    margin-top: 50px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* =============================== */
+/* ✅ MOBILE */
+/* =============================== */
+
+@media (max-width: 768px) {
+    .stress-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================== */
+/* ✅ HORMONAL CYCLE PREDICTOR */
+/* =============================== */
+
+.vastor-hormone {
+    padding: 80px 50px; /* ✅ Reduced huge gap */
+    text-align: center;
+}
+
+.hormone-title {
+    font-size: 42px;
+    font-weight: 900;
+}
+
+.hormone-title span {
+    background: linear-gradient(135deg, #fb7185, #f472b6);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hormone-subtitle {
+    margin-top: 10px;
+    opacity: 0.8;
+    max-width: 740px;
+    margin-inline: auto;
+}
+
+/* ✅ GRID */
+.hormone-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+/* ✅ CARD */
+.hormone-card {
+    padding: 36px;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.15);
+    transition: 0.35s ease;
+}
+
+.hormone-card:hover {
+    transform: translateY(-6px);
+}
+
+.dark-mode .hormone-card {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+/* ✅ RING */
+.hormone-ring {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin: auto;
+}
+
+.hormone-ring svg {
+    transform: rotate(-90deg);
+}
+
+.hormone-bg {
+    fill: none;
+    stroke: rgba(150, 150, 150, 0.2);
+    stroke-width: 16;
+}
+
+.hormone-fill {
+    fill: none;
+    stroke-width: 16;
+    stroke-linecap: round;
+    stroke-dasharray: 377;
+    stroke-dashoffset: 90; /* ✅ NOW IT STARTS FILLED */
+    transition: stroke-dashoffset 1.8s ease;
+    stroke: url(#hormoneGradient);
+}
+
+
+.hormone-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hormone-center h1 {
+    font-size: 42px;
+    font-weight: 900;
+}
+
+.hormone-center span {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+
+/* =============================== */
+/* ✅ PREMIUM MEDICAL STATUS BADGES */
+/* =============================== */
+
+.status-badge {
+    margin-top: 26px;
+    padding: 10px 22px;
+    border-radius: 999px;
+
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+
+    transition: 0.35s ease;
+}
+
+/* ✅ LOW RISK — Calm Green */
+.status-low {
+    background: rgba(16, 185, 129, 0.15);
+    color: #065f46;
+}
+
+.dark-mode .status-low {
+    background: rgba(16, 185, 129, 0.20);
+    color: #6ee7b7;
+}
+
+/* ✅ MODERATE — Soft Amber */
+.status-moderate {
+    background: rgba(246, 225, 137, 0.25);
+    color: #92400e;
+}
+
+.dark-mode .status-moderate {
+    background: rgba(245, 158, 11, 0.18);
+    color: #fde68a;
+}
+
+/* ✅ CRITICAL — Controlled Red */
+.status-high {
+    background: rgba(239, 68, 68, 0.12);
+    color: #991b1b;
+}
+
+.dark-mode .status-high {
+    background: rgba(239, 68, 68, 0.20);
+    color: #fca5a5;
+}
+
+/* ✅ HOVER: Soft Medical Glow */
+.status-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18),
+    0 0 20px rgba(52, 211, 153, 0.15);
+}
+
+
+/* ✅ STATUS */
+/*.cycle-status {*/
+/*    margin-top: 24px;*/
+/*    padding: 12px 22px;*/
+/*    border-radius: 999px;*/
+/*    font-weight: 700;*/
+/*}*/
+
+.balanced {
+    background: linear-gradient(135deg, #34d399, #22c55e);
+    color: white;
+}
+
+.warning {
+    background: linear-gradient(135deg, #fde68a, #facc15);
+    color: #020617;
+}
+
+.critical {
+    background: linear-gradient(135deg, #f87171, #ef4444);
+    color: white;
+}
+
+/* ✅ FACTORS */
+.hormone-factor {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-weight: 600;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+.dark-mode .hormone-factor {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.hormone-note {
+    margin-top: 16px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* ✅ DISCLAIMER */
+.hormone-warning {
+    margin-top: 40px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* ✅ MOBILE */
+@media (max-width: 768px) {
+    .hormone-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =============================== */
+/* ✅ GLOBAL SECTION SPACING FIX */
+/* =============================== */
+
+/*section {*/
+/*    padding-top: 80px !important;*/
+/*    padding-bottom: 80px !important;*/
+/*}*/
+
+@media (max-width: 768px) {
+    section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+}
+
+
+/* ✅ BASE TRACK */
+.ring-bg {
+    fill: none;
+    stroke: rgba(148, 163, 184, 0.25);
+    stroke-width: 16;
+}
+
+/* ✅ COMMON PROGRESS STYLE */
+.score-progress,
+.stress-fill,
+.hormone-fill {
+    fill: none;
+    stroke-width: 16;
+    stroke-linecap: round;
+
+    stroke-dasharray: 402; /* ✅ FULL CIRCLE */
+    stroke-dashoffset: 402; /* ✅ START EMPTY */
+
+    transition: stroke-dashoffset 1.6s ease;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+/* ✅ COLORS */
+.score-progress {
+    stroke: url(#healthGradient);
+    filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.35));
+}
+
+.stress-fill {
+    stroke: url(#stressGradient);
+    filter: drop-shadow(0 0 10px rgba(251, 146, 60, 0.45));
+}
+
+.hormone-fill {
+    stroke: url(#hormoneGradient);
+    filter: drop-shadow(0 0 10px rgba(244, 114, 182, 0.45));
+}
+
+/* ✅ DARK MODE TRACK */
+.dark-mode .ring-bg {
+    stroke: rgba(255, 255, 255, 0.12);
+}
+
+/*.pie.steps     { stroke: #34d399; stroke-dashoffset: 110; }*/
+/*.pie.distance  { stroke: #60a5fa; stroke-dashoffset: 220; }*/
+/*.pie.calories  { stroke: #fb7185; stroke-dashoffset: 300; }*/
+/*.pie.sleep     { stroke: #a78bfa; stroke-dashoffset: 390; }*/
+/*.pie.hydration { stroke: #facc15; stroke-dashoffset: 460; }*/
+
+/*.ring-progress {*/
+/*    stroke-dasharray: 327;*/
+/*    stroke-dashoffset: 327;*/
+/*}*/
+/*.steps-ring    { stroke: #34d399; stroke-dashoffset: 90; }*/
+/*.water-ring    { stroke: #60a5fa; stroke-dashoffset: 150; }*/
+/*.sleep-ring    { stroke: #a78bfa; stroke-dashoffset: 140; }*/
+/*.calories-ring { stroke: #fb7185; stroke-dashoffset: 180; }*/
+
+.score-progress {
+    fill: none;
+    stroke: url(#scoreGradient);
+    stroke-width: 14;
+    stroke-linecap: round;
+
+    stroke-dasharray: 327; /* r=52 → circumference ≈ 327 */
+    stroke-dashoffset: 327;
+
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+
+    transition: stroke-dashoffset 1.2s ease;
+}
+
+.score-bg {
+    fill: none;
+    stroke: rgba(148, 163, 184, 0.25);
+    stroke-width: 14;
+}
+
+/* ===============================
+📱 MINI APP PREVIEW (HERO)
+=============================== */
+
+.hero-device {
+    width: 280px;
+    height: 560px;
+    border-radius: 40px;
+    padding: 18px;
+    background: linear-gradient(180deg, #020617, #0f172a);
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-preview {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: linear-gradient(180deg, #f8fafc, #e2e8f0);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* ✅ HEADER */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* ✅ MINI STATS */
+.mini-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.mini-card {
+    background: white;
+    border-radius: 14px;
+    text-align: center;
+    padding: 10px 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    font-size: 11px;
+}
+
+.mini-ring {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 6px;
+    border: 4px solid;
+}
+
+/* ✅ COLORS */
+.ring-green {
+    border-color: #34d399;
+}
+
+.ring-blue {
+    border-color: #60a5fa;
+}
+
+.ring-purple {
+    border-color: #a78bfa;
+}
+
+/* ✅ AI SCORE */
+.mini-ai-score {
+    background: linear-gradient(135deg, #34d399, #60a5fa);
+    border-radius: 20px;
+    padding: 16px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 12px 40px rgba(52, 211, 153, 0.45);
+}
+
+.ai-pill {
+    margin: 6px auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+}
+
+/* ✅ STRESS BAR */
+.mini-stress {
+    margin-top: 16px;
+    font-size: 12px;
+}
+
+.stress-bar {
+    height: 8px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.stress-fill-mini {
+    height: 100%;
+    width: 55%;
+    background: linear-gradient(90deg, #facc15, #fb7185);
+    border-radius: 999px;
+    animation: stressPulse 3s infinite alternate;
+}
+
+@keyframes stressPulse {
+    from {
+        width: 40%;
+    }
+    to {
+        width: 65%;
+    }
+}
+
+/* ✅ DARK MODE SUPPORT */
+.dark-mode .app-preview {
+    background: linear-gradient(180deg, #020617, #0f172a);
+    color: white;
+}
+
+.dark-mode .mini-card {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+
+
+/* ===============================
+📱 IPHONE FRAME (FIXED)
+=============================== */
+
+.iphone-frame {
+    width: 315px;
+    height: 650px;
+
+    background: linear-gradient(180deg, #0b0d14, #020617);
+
+    /* ✅ EXACT OUTER CURVE */
+    border-radius: 56px;
+
+    /* ✅ EXACT FRAME THICKNESS */
+    padding: 7px;
+
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+
+    box-shadow:
+            0 45px 130px rgba(0, 0, 0, 0.6),
+            inset 0 0 0 1.2px rgba(255, 255, 255, 0.12);
+}
+
+
+
+.iphone-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 46px;
+    pointer-events: none;
+    background: linear-gradient(
+            120deg,
+            rgba(255,255,255,0.18),
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.01)
+    );
+}
+
+
+/* SECOND VOLUME BUTTON */
+/* ===============================
+✅ REAL IPHONE SIDE BUTTONS
+=============================== */
+
+    /* ✅ LEFT VOLUME BUTTON */
+/* 🔊 VOLUME UP */
+
+.iphone-silent {
+    position: absolute;
+    left: -3px;
+    top: 110px;
+
+    width: 3px;
+    height: 26px;
+
+    background: #000;
+    border-radius: 3px;
+    z-index: 100;
+}
+.iphone-volume-up {
+    position: absolute;
+    left: -3px;
+    top: 150px;
+
+    width: 3px;
+    height: 44px;
+
+    background: #000;
+    border-radius: 3px;
+    z-index: 100;
+}
+
+/* 🔉 Volume Down */
+.iphone-volume-down {
+    position: absolute;
+    left: -3px;
+    top: 205px;
+
+    width: 3px;
+    height: 44px;
+
+    background: #000;
+    border-radius: 3px;
+    z-index: 100;
+}
+/* ✅ RIGHT POWER BUTTON */
+.iphone-power {
+    position: absolute;
+    right: -3px;
+    top: 175px;
+
+    width: 3px;
+    height: 78px;
+
+    background: #000;
+    border-radius: 3px;
+    z-index: 100;
+}
+
+
+
+
+/* ===============================
+📺 SCREEN
+=============================== */
+
+.iphone-screen {
+    position: absolute;
+
+    /* ✅ MUST MATCH FRAME PADDING EXACTLY */
+    inset: 7px;
+
+    /* ✅ INNER RADIUS = OUTER RADIUS - PADDING */
+    border-radius: 49px;
+
+    background: linear-gradient(180deg, #f9fafb, #e5e7eb);
+
+    padding: 58px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    overflow: hidden;
+    z-index: 10;
+}
+
+
+
+
+/* ===============================
+✅ REAL iOS STATUS BAR
+=============================== */
+
+.ios-status-bar,
+.ios-status-bar * {
+    direction: ltr !important;
+    transform: none !important;
+}
+
+.ios-status-bar {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    padding: 0 18px;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    z-index: 50;
+    pointer-events: none;
+}
+
+
+/* ✅ TIME — LEFT */
+.ios-left {
+    justify-self: start;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 800;
+    color: #020617;
+}
+
+
+/* ✅ PERFECT DYNAMIC ISLAND (APPLE SCALE) */
+.dynamic-island {
+    width: 92px;
+    height: 24px;         /* ✅ FIXED (realistic height) */
+    background: #000;
+    border-radius: 999px;
+    justify-self: center;
+}
+
+
+/* ✅ RIGHT ZONE */
+.ios-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-self: end;
+}
+
+
+/* ✅ SIGNAL BARS */
+.ios-signal {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.ios-signal span {
+    width: 3px;
+    background: #020617;
+    border-radius: 2px;
+}
+
+.ios-signal span:nth-child(1) { height: 4px; opacity: .4; }
+.ios-signal span:nth-child(2) { height: 6px; opacity: .6; }
+.ios-signal span:nth-child(3) { height: 9px; opacity: .8; }
+.ios-signal span:nth-child(4) { height: 12px; }
+
+
+/* ✅ CLEAN iOS BATTERY — NO CAP, NO ILLUSIONS */
+.ios-battery {
+    position: relative;
+    width: 26px;
+    height: 12px;
+    border: 2px solid #020617;
+    border-radius: 6px;
+    background: transparent;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 1.5px;
+    overflow: hidden;   /* ✅ KILLS CAP SHADOW EFFECT */
+}
+
+/* ✅ BATTERY FILL */
+.battery-level {
+    height: 100%;
+    width: 79%;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+
+/* ✅ PERFECTLY ATTACHED BATTERY CAP */
+/*.battery-cap {*/
+/*    position: absolute;*/
+/*    right: -5px;     !* ✅ ATTACHED (NOT FLOATING) *!*/
+/*    top: 3px;*/
+/*    width: 4px;*/
+/*    height: 6px;*/
+/*    background: #020617;*/
+/*    border-radius: 2px;*/
+/*}*/
+
+/*.ios-status-bar,*/
+/*.ios-right {*/
+/*    overflow: visible !important;*/
+/*}*/
+
+
+
+
+/* ===============================
+🔘 MINI DASHBOARD GRID
+=============================== */
+
+.iphone-dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* ===============================
+⭕ MINI RING CARDS
+=============================== */
+
+.iphone-ring-card {
+    background: white;
+    border-radius: 18px;
+    padding: 8px 6px;
+    text-align: center;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.iphone-ring-card h4 {
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.iphone-ring-card span {
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* ✅ RINGS */
+.iphone-ring-bg {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0.12);
+    stroke-width: 10;
+}
+
+.iphone-ring-progress {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 327;
+    stroke-dashoffset: 327;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 1.6s cubic-bezier(.21, 1.02, .73, 1);
+}
+
+/* ===============================
+🍎 BIG ACTIVITY PIE
+=============================== */
+
+.app-dashboard-card {
+    background: linear-gradient(180deg, #ffffff, #f1f5f9);
+    border-radius: 24px;
+    padding: 14px;
+    margin-top: 12px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.app-title {
+    font-size: 13px;
+    font-weight: 900;
+    margin-bottom: 6px;
+}
+
+.app-pie-wrap {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: auto;
+}
+
+.app-pie-bg {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0.1);
+    stroke-width: 8;
+}
+
+.app-pie {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 327;
+    stroke-dashoffset: 327;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 1.4s ease;
+}
+
+/* ✅ FORCE COLORS */
+.app-pie.steps {
+    stroke: #22c55e;
+}
+
+.app-pie.hydration {
+    stroke: #3b82f6;
+}
+
+.app-pie.sleep {
+    stroke: #8b5cf6;
+}
+
+.app-pie.calories {
+    stroke: #ef4444;
+}
+
+.app-pie-center {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    font-weight: 900;
+}
+
+.app-pie-center h2 {
+    font-size: 20px;
+}
+
+.app-pie-center span {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+/* ===============================
+🧠 AI SCORE
+=============================== */
+
+.iphone-ai-card {
+    border-radius: 22px;
+    padding: 14px;
+    text-align: center;
+    background: linear-gradient(135deg, #34d399, #60a5fa);
+    color: white;
+    box-shadow: 0 22px 70px rgba(52, 211, 153, 0.45);
+    font-weight: 900;
+}
+
+.iphone-ai-value {
+    font-size: 28px;
+    margin: 6px 0;
+}
+
+/* ===============================
+😫 STRESS BAR
+=============================== */
+
+.iphone-stress {
+    font-size: 12px;
+}
+
+.iphone-stress-bar {
+    height: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.iphone-stress-fill {
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(90deg, #facc15, #fb7185);
+    border-radius: 999px;
+    animation: pulseStress 3s infinite alternate;
+}
+
+@keyframes pulseStress {
+    from {
+        width: 45%;
+    }
+    to {
+        width: 70%;
+    }
+}
+
+/* ===============================
+✅ FORCE ALL APP NUMBERS TO BE VISIBLE
+=============================== */
+
+/* iPhone mini ring values */
+.iphone-ring-card span,
+.iphone-ring-card h4 {
+    color: #020617 !important;
+    font-weight: 900;
+}
+
+/* Big activity pie center text */
+.app-pie-center h2 {
+    color: #020617 !important;
+    font-weight: 900;
+}
+
+.app-pie-center span {
+    color: rgba(2, 6, 23, 0.7) !important;
+}
+
+/* AI Health Score text */
+.iphone-ai-card h3,
+.iphone-ai-value,
+.iphone-ai-card p {
+    color: #ffffff !important;
+}
+
+/* Stress label */
+.iphone-stress p {
+    color: #020617 !important;
+    font-weight: 700;
+}
+
+/* Status bar text */
+.iphone-status span {
+    color: #020617 !important;
+    font-weight: 800;
+}
+
+/* ===============================
+✅ FIX: PIE LEGEND + LABEL TEXT VISIBILITY
+=============================== */
+
+/* Bottom labels under big pie */
+.app-dashboard-card,
+.app-dashboard-card * {
+    color: #020617 !important;
+}
+
+/* Explicit legend labels */
+.app-dashboard-card .app-legend span {
+    color: #020617 !important;
+    font-weight: 800;
+}
+
+/* The "Steps Water Sleep Calories" text below circle */
+.app-dashboard-card small,
+.app-dashboard-card .labels,
+.app-dashboard-card p {
+    color: #020617 !important;
+    font-weight: 800;
+}
+
+/* If labels are inside SVG text */
+svg text {
+    fill: #020617 !important;
+    font-weight: 800;
+}
+
+/* Dots stay colored */
+.steps-dot {
+    background: #22c55e !important;
+}
+
+.water-dot {
+    background: #3b82f6 !important;
+}
+
+.sleep-dot {
+    background: #8b5cf6 !important;
+}
+
+.cal-dot {
+    background: #ef4444 !important;
+}
+
+
+/* ===============================
+🍏 REAL iOS BATTERY
+=============================== */
+
+.ios-battery {
+    width: 22px;
+    height: 11px;
+    border: 2px solid #020617;
+    border-radius: 3px;
+    position: relative;
+}
+
+.ios-battery::after {
+    content: "";
+    position: absolute;
+    right: -4px;
+    top: 3px;
+    width: 3px;
+    height: 5px;
+    background: #020617;
+    border-radius: 1px;
+}
+
+.battery-level {
+    height: 100%;
+    width: 72%; /* Battery % */
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    border-radius: 2px;
+}
+
+
+/* ===============================
+🍽️ AI MEAL PLANNER CARD
+=============================== */
+
+.iphone-meal-card {
+    background: linear-gradient(180deg, #ffffff, #f1f5f9);
+    border-radius: 22px;
+    padding: 14px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+    text-align: center;
+    margin-top: auto;
+}
+
+.iphone-meal-card h4 {
+    font-size: 13px;
+    font-weight: 900;
+    margin-bottom: 4px;
+}
+
+.iphone-meal-card p {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.meal-tags {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.meal-tags span {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* ===============================
+💬 CONTACT DR BUTTON — PREMIUM
+=============================== */
+
+.contact-doctor-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #34d399, #60a5fa);
+    color: white;
+    font-weight: 900;
+    font-size: 12px;
+    text-decoration: none;
+    box-shadow: 0 14px 40px rgba(52, 211, 153, 0.45);
+    transition: transform 0.3s ease;
+}
+
+.contact-doctor-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Scrollable inner area of the phone */
+.iphone-scroll {
+    flex: 1;
+    margin-top: 10px;
+    overflow-y: auto;
+    padding-bottom: 16px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* hide scrollbars but keep scrolling */
+.iphone-scroll::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.iphone-section {
+    margin-bottom: 12px;
+}
+
+/* iOS battery icon */
+.ios-battery {
+    width: 26px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1.4px solid #020617;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+.ios-battery::after {
+    content: "";
+    position: absolute;
+    right: -3px;
+    top: 2px;
+    width: 2px;
+    height: 8px;
+    border-radius: 2px;
+    background: #020617;
+}
+
+.battery-level {
+    width: 70%;
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+/* Apple-style meal planner cards */
+.iphone-meal-card {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 20px;
+    padding: 10px 12px;
+    font-size: 11px;
+    text-align: left;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(14px);
+}
+
+.dark-mode .iphone-meal-card {
+    background: rgba(15, 23, 42, 0.96);
+    color: #e5e7eb;
+}
+
+/* Tag pills */
+.meal-tags {
+    margin: 6px 0 8px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.meal-tags span {
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: rgba(15, 118, 110, 0.06);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* Primary consult button inside phone */
+.contact-doctor-btn {
+    width: 100%;
+    margin-top: 4px;
+    border-radius: 999px;
+    border: none;
+    padding: 7px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(135deg, #22c55e, #14b8a6);
+    color: #ffffff;
+    box-shadow: 0 14px 36px rgba(34, 197, 94, 0.55);
+}
+
+/* Camera card */
+.camera-card {
+    background: linear-gradient(135deg, #eef2ff, #ecfeff);
+}
+
+.camera-btn {
+    width: 100%;
+    margin-top: 6px;
+    border-radius: 999px;
+    border: none;
+    padding: 7px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    color: #ffffff;
+    box-shadow: 0 14px 36px rgba(59, 130, 246, 0.55);
+}
+
+.meal-file-input {
+    display: none;
+}
+
+.camera-result {
+    margin-top: 6px;
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+
+/* ===============================
+🍎 APPLE FITNESS ULTRA LIGHT MODE FIX
+=============================== */
+
+/* Force proper readable colors in Light Mode */
+body.light-mode .iphone-screen {
+    background: linear-gradient(180deg, #f8fafc, #e5e7eb);
+    color: #020617;
+}
+
+body.light-mode .iphone-ring-card,
+body.light-mode .iphone-meal-card,
+body.light-mode .app-dashboard-card,
+body.light-mode .iphone-ai-card {
+    background: #ffffff !important;
+    color: #020617 !important;
+}
+
+/* Titles & labels */
+body.light-mode .iphone-ring-card h4,
+body.light-mode .app-title,
+body.light-mode .iphone-meal-card h4 {
+    color: #020617 !important;
+    font-weight: 800;
+}
+
+/* Numbers visible again */
+body.light-mode .iphone-ring-card span,
+body.light-mode .app-pie-center h2,
+body.light-mode .iphone-ai-value {
+    color: #020617 !important;
+    font-weight: 900;
+}
+
+/* Legend text */
+body.light-mode .app-legend span {
+    color: #020617 !important;
+    font-weight: 600;
+}
+
+/* Stress text fix */
+body.light-mode .iphone-stress p {
+    color: #020617 !important;
+    font-weight: 700;
+}
+
+/* AI Health Card keeps glow but readable */
+body.light-mode .iphone-ai-card {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #34d399, #60a5fa) !important;
+}
+
+/* ===============================
+🍏 ULTRA POLISH — CARD DEPTH & ANIMATION
+=============================== */
+
+.iphone-ring-card,
+.app-dashboard-card,
+.iphone-meal-card,
+.iphone-ai-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.iphone-ring-card:hover,
+.app-dashboard-card:hover,
+.iphone-meal-card:hover,
+.iphone-ai-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 25px 90px rgba(0, 0, 0, 0.25);
+}
+
+/* ===============================
+🍏 FIX MEAL SNAPSHOT VISIBILITY
+=============================== */
+
+body.light-mode .camera-card {
+    background: linear-gradient(135deg, #eef2ff, #e0f2fe) !important;
+    color: #020617 !important;
+}
+
+body.light-mode .camera-btn {
+    background: linear-gradient(135deg, #3b82f6, #6366f1) !important;
+    color: white !important;
+}
+
+/* ===============================
+🍏 BATTERY ALWAYS VISIBLE
+=============================== */
+
+.ios-battery {
+    background: #ffffff;
+}
+
+.battery-level {
+    background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+/* ===============================
+🍏 SMOOTH APP SCROLL FEEL
+=============================== */
+
+.iphone-scroll {
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+}
+
+/* ===============================
+🍏 SMOOTH TYPOGRAPHY
+=============================== */
+
+.iphone-screen,
+.iphone-ring-card,
+.iphone-ai-card,
+.iphone-meal-card {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ===============================
+🍏 LEGEND DOT VISIBILITY FIX
+=============================== */
+
+.steps-dot {
+    background: #22c55e !important;
+}
+
+.water-dot {
+    background: #3b82f6 !important;
+}
+
+.sleep-dot {
+    background: #8b5cf6 !important;
+}
+
+.cal-dot {
+    background: #ef4444 !important;
+}
+
+/* ===============================
+🍏 FIX WHITE WASHING INSIDE BIG PIE
+=============================== */
+
+body.light-mode .app-pie-center span {
+    color: rgba(2, 6, 23, 0.65) !important;
+}
+
+body.light-mode .app-pie-bg {
+    stroke: rgba(2, 6, 23, 0.08) !important;
+}
+
+/* ===============================
+🍏 APP BADGE SHADOW BOOST
+=============================== */
+
+.vastor-health-btn,
+.contact-doctor-btn,
+.camera-btn {
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.28);
+}
+
+/* ✅ DARK MODE: SOFT BLACK TEXT FOR "HYDRATED!" BADGE */
+body.dark-mode .vastor-badge,
+body.dark-mode .stay-hydrated-badge,
+body.dark-mode .hydrated-badge,
+body.dark-mode .stay-hydrated span {
+    color: #020617 !important; /* Elegant deep black */
+    text-shadow: none !important;
+    font-weight: 900;
+}
+
+/* ✅ FIX: Bottom feature icons washed out issue */
+.bottom-features,
+.bottom-features *,
+.feature-card,
+.feature-card * {
+    opacity: 1 !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+}
+
+/* ===============================
+🍏 APPLE-STYLE GLOBAL HOVER EFFECT
+=============================== */
+
+/* =========================================
+🍏 FINAL DARK MODE COLOR & HOVER FIX
+========================================= */
+
+
+

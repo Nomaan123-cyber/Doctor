@@ -1307,3 +1307,82 @@ body {
 .social-links .social:hover {
     transform: translateY(-8px) scale(1.15);
 }
+
+
+.vastor-health-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 16px;
+    padding: 14px 34px;
+    border-radius: 999px;
+
+    background: linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b
+    );
+
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+
+    box-shadow:
+            0 12px 30px rgba(15, 23, 42, 0.35),
+            inset 0 0 0 1px rgba(255,255,255,0.06);
+
+    transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease,
+            background 0.35s ease;
+}
+
+/* ✅ SOFT PROFESSIONAL HOVER */
+.vastor-health-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(
+            135deg,
+            #0b1220,
+            #334155
+    );
+
+    box-shadow:
+            0 22px 55px rgba(15, 23, 42, 0.45),
+            0 0 24px rgba(56, 189, 248, 0.25);
+}
+
+/* ✅ ACTIVE PRESS */
+.vastor-health-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ✅ DARK MODE VERSION */
+.dark-mode .vastor-health-btn {
+    background: linear-gradient(
+            135deg,
+            #e5e7eb,
+            #cbd5f5
+    );
+
+    color: #020617;
+
+    box-shadow:
+            0 14px 40px rgba(148, 163, 184, 0.25);
+}
+
+.dark-mode .vastor-health-btn:hover {
+    background: linear-gradient(
+            135deg,
+            #f8fafc,
+            #e0e7ff
+    );
+
+    box-shadow:
+            0 22px 60px rgba(148, 163, 184, 0.45),
+            0 0 30px rgba(99, 102, 241, 0.25);
+}
+

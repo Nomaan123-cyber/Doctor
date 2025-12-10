@@ -131,7 +131,11 @@ END:VCALENDAR`;
 // ✅ UK → LOCAL TIME SLOT CONVERTER
 // ===============================
 
-// ✅ Base UK Time Slots (24-hour format)
+// ===============================
+// ✅ GLOBAL UK → LOCAL TIME SLOT SYSTEM (CLEAN & WORKING)
+// ===============================
+
+// ✅ 1. DEFINE UK BASE TIME SLOTS (24-hour, UK TIME)
 const ukTimeSlots = [
     "10:00",
     "12:00",
@@ -139,69 +143,50 @@ const ukTimeSlots = [
     "18:00"
 ];
 
-// ===============================
-// ✅ GLOBAL UK → LOCAL TIME SLOT SYSTEM (FIXED)
-// ===============================
-
-// ✅ Base UK Time Slots (24-hour format, UK time)
-const ukTimeSlots = [
-    "10:00",
-    "12:00",
-    "15:00",
-    "18:00"
-];
-
+// ✅ 2. GET ELEMENTS
 const timeSelect = document.getElementById("timeSlotSelect");
 const slotUK = document.getElementById("slotUK");
 const slotLocal = document.getElementById("slotLocal");
 
-// ✅ TRUE UK → LOCAL TIME CONVERSION
+// ✅ 3. TRUE UK → LOCAL TIME CONVERSION
 function convertUKtoLocal(ukTime) {
     const userTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     const now = new Date();
     const [hour, minute] = ukTime.split(":").map(Number);
 
-    // ✅ Create time in UK explicitly using UTC offset
+    // ✅ Create UK-based time safely
     const ukDate = new Date(
         now.toLocaleString("en-GB", { timeZone: "Europe/London" })
     );
 
     ukDate.setHours(hour, minute, 0, 0);
 
-    // ✅ Convert to LOCAL browser time safely
+    // ✅ Convert to local browser timezone
     const localDate = new Date(
-        ukDate.toLocaleString("en-US", {
-            timeZone: userTZ
-        })
+        ukDate.toLocaleString("en-US", { timeZone: userTZ })
     );
 
     return {
-        uk: ukDate.toLocaleTimeString("en-GB", {
-            hour: "2-digit",
-            minute: "2-digit"
-        }),
-        local: localDate.toLocaleTimeString("en-US", {
-            hour: "2-digit",
-            minute: "2-digit"
-        }),
+        uk: ukDate.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }),
+        local: localDate.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" }),
         tz: userTZ
     };
 }
 
-// ✅ Populate Time Slots Correctly
-if (timeSelect) {
+// ✅ 4. POPULATE DROPDOWN
+if (timeSelect && ukTimeSlots.length > 0) {
     ukTimeSlots.forEach(time => {
         const converted = convertUKtoLocal(time);
 
         const option = document.createElement("option");
-        option.value = `${converted.uk} UK → ${converted.local} ${converted.tz}`;
+        option.value = `${converted.uk} UK → ${converted.local}`;
         option.textContent = `${converted.uk} UK → ${converted.local} (Your Time)`;
 
         timeSelect.appendChild(option);
     });
 
-    // ✅ Store Hidden Values for Email
+    // ✅ 5. STORE HIDDEN VALUES FOR EMAIL
     timeSelect.addEventListener("change", () => {
         const selected = timeSelect.value;
         const parts = selected.split("→");

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VastoR Health Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="vastor-health.css">
+</head>
+
+<body class="light-mode">
+
+<!-- ✅ NAVBAR -->
+<nav class="navbar">
+    <h2>VastoR Health</h2>
+    <link rel="stylesheet" href="style.css">
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="telemedicine.html">Telemedicine</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#appointment">Contact</a></li>
+    </ul>
+
+    <!--    <button id="toggleTheme">🌙</button>-->
+</nav>
+
+<!-- ✅ DASHBOARD -->
+<section class="dashboard">
+
+    <h1 class="dashboard-title">
+        STAY <span>HYDRATED!</span>
+    </h1>
+
+    <div class="dashboard-grid">
+
+        <!-- ✅ OVERVIEW CARD -->
+        <div class="glass-card overview-card">
+
+            <h3>Overview</h3>
+            <p>Here is your basic water balance.</p>
+
+            <div class="metrics">
+                <div class="metric">
+                    <h4>💧 Water Intake</h4>
+                    <span>1200 ml</span>
+                </div>
+
+                <div class="metric">
+                    <h4>👣 Steps</h4>
+                    <span>3,544</span>
+                </div>
+            </div>
+
+            <div class="health-rings">
+
+                <div class="ring-card">
+                    <svg class="ring" viewBox="0 0 100 100">
+                        <circle class="ring-bg" cx="50" cy="50" r="42"/>
+                        <circle class="ring-progress steps-ring" cx="50" cy="50" r="42"/>
+                    </svg>
+                    <h4>👣 Steps</h4>
+                    <span>7,240 / 10,000</span>
+                </div>
+
+                <div class="ring-card">
+                    <svg class="ring" viewBox="0 0 100 100">
+                        <circle class="ring-bg" cx="50" cy="50" r="42"/>
+                        <circle class="ring-progress water-ring" cx="50" cy="50" r="42"/>
+                    </svg>
+                    <h4>💧 Hydration</h4>
+                    <span>1.2L / 3L</span>
+                </div>
+
+                <div class="ring-card">
+                    <svg class="ring" viewBox="0 0 100 100">
+                        <circle class="ring-bg" cx="50" cy="50" r="42"/>
+                        <circle class="ring-progress sleep-ring" cx="50" cy="50" r="42"/>
+                    </svg>
+                    <h4>😴 Sleep</h4>
+                    <span>6.2h / 8h</span>
+                </div>
+
+                <div class="ring-card">
+                    <svg class="ring" viewBox="0 0 100 100">
+                        <circle class="ring-bg" cx="50" cy="50" r="42"/>
+                        <circle class="ring-progress calories-ring" cx="50" cy="50" r="42"/>
+                    </svg>
+                    <h4>🔥 Calories</h4>
+                    <span>430 kcal</span>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="health-pie-container">
+            <h3 class="pie-title">Today's Health Overview</h3>
+
+            <div class="pie-wrapper">
+                <svg width="260" height="260" viewBox="0 0 260 260">
+                    <circle class="pie-bg" cx="130" cy="130" r="110"/>
+                    <circle class="pie steps" cx="130" cy="130" r="110"/>
+                    <circle class="pie distance" cx="130" cy="130" r="110"/>
+                    <circle class="pie calories" cx="130" cy="130" r="110"/>
+                    <circle class="pie sleep" cx="130" cy="130" r="110"/>
+                    <circle class="pie hydration" cx="130" cy="130" r="110"/>
+                </svg>
+
+                <div class="pie-center">
+                    <h2 id="totalSteps">0</h2>
+                    <span>Steps Today</span>
+                </div>
+            </div>
+
+            <div class="pie-legend">
+                <span><i class="dot steps-dot"></i> Steps</span>
+                <span><i class="dot distance-dot"></i> Distance</span>
+                <span><i class="dot calories-dot"></i> Calories</span>
+                <span><i class="dot sleep-dot"></i> Sleep</span>
+                <span><i class="dot hydration-dot"></i> Hydration</span>
+            </div>
+        </div>
+
+
+        <!--        &lt;!&ndash; ✅ DRINK STATISTICS &ndash;&gt;-->
+        <!--        <div class="glass-card stats-card">-->
+
+        <!--            <h3>Drink Statistic</h3>-->
+
+        <!--            <div class="bar-chart">-->
+        <!--                <div class="bar" style="height:40%"></div>-->
+        <!--                <div class="bar" style="height:60%"></div>-->
+        <!--                <div class="bar active" style="height:80%"></div>-->
+        <!--                <div class="bar" style="height:55%"></div>-->
+        <!--                <div class="bar" style="height:45%"></div>-->
+        <!--            </div>-->
+
+        <!--        </div>-->
+
+    </div>
+
+    <section class="vastor-hero">
+        <div class="vastor-hero-content">
+            <span class="vastor-badge">🚀 App Under Development</span>
+
+            <h1>
+                Your <span>Daily Health Companion</span><br>
+                Powered by AI
+            </h1>
+
+            <p>
+                VastoR Health is an upcoming AI-driven wellness platform designed to help you
+                track your sleep, steps, mental health, screen time, hydration, exercise,
+                and nutrition — all in one beautifully simple experience.
+            </p>
+
+            <div class="vastor-cta-row">
+                <a href="#" class="vastor-health-btn">Join the Early Access</a>
+                <a href="#" class="vastor-secondary-btn">View Live Preview</a>
+            </div>
+        </div>
+
+        <div class="vastor-hero-visual">
+            <div class="hero-glow"></div>
+
+            <div class="hero-device iphone-frame">
+
+                <!-- ✅ VOLUME + POWER BUTTONS -->
+                <div class="iphone-silent"></div>
+                <div class="iphone-volume-up"></div>
+                <div class="iphone-volume-down"></div>
+                <div class="iphone-power"></div>
+
+                <!-- ✅ IPHONE SCREEN -->
+                <div class="iphone-screen">
+
+                    <!-- ✅ PERFECT iOS STATUS BAR -->
+                    <div class="ios-status-bar">
+
+                        <!-- ✅ TIME (LEFT SIDE – BETWEEN EDGE & ISLAND) -->
+                        <div class="ios-left">
+                            <span id="iphoneTime">08:47</span>
+                        </div>
+
+                        <!-- ✅ CENTERED DYNAMIC ISLAND -->
+                        <div class="dynamic-island"></div>
+
+                        <!-- ✅ RIGHT SIDE: SIGNAL + BATTERY -->
+                        <div class="ios-right">
+
+                            <!-- ✅ SIGNAL -->
+                            <div class="ios-signal">
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+
+                            <!-- ✅ BATTERY (NO CAP – CLEAN) -->
+                            <div class="ios-battery">
+                                <div class="battery-level"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ✅ YOUR APP CONTENT CONTINUES BELOW HERE -->
+
+
+
+
+
+
+
+                    <!-- ✅ SCROLLABLE CONTENT INSIDE THE PHONE -->
+                    <div class="iphone-scroll">
+
+                        <!-- MINI RINGS -->
+                        <div class="iphone-dashboard iphone-section">
+
+                            <!-- 👣 STEPS -->
+                            <div class="iphone-ring-card">
+                                <svg viewBox="0 0 120 120">
+                                    <defs>
+                                        <linearGradient id="gradSteps" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#34d399"/>
+                                            <stop offset="100%" stop-color="#22c55e"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="60" cy="60" r="52" class="iphone-ring-bg"/>
+                                    <circle cx="60" cy="60" r="52"
+                                            class="iphone-ring-progress"
+                                            stroke="url(#gradSteps)"
+                                            data-progress="72"/>
+                                </svg>
+                                <h4>Steps</h4>
+                                <span>7,240</span>
+                            </div>
+
+                            <!-- 💧 WATER -->
+                            <div class="iphone-ring-card">
+                                <svg viewBox="0 0 120 120">
+                                    <defs>
+                                        <linearGradient id="gradWater" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#60a5fa"/>
+                                            <stop offset="100%" stop-color="#2563eb"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="60" cy="60" r="52" class="iphone-ring-bg"/>
+                                    <circle cx="60" cy="60" r="52"
+                                            class="iphone-ring-progress"
+                                            stroke="url(#gradWater)"
+                                            data-progress="40"/>
+                                </svg>
+                                <h4>Water</h4>
+                                <span>1.2L</span>
+                            </div>
+
+                            <!-- 😴 SLEEP -->
+                            <div class="iphone-ring-card">
+                                <svg viewBox="0 0 120 120">
+                                    <defs>
+                                        <linearGradient id="gradSleep" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#a78bfa"/>
+                                            <stop offset="100%" stop-color="#7c3aed"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="60" cy="60" r="52" class="iphone-ring-bg"/>
+                                    <circle cx="60" cy="60" r="52"
+                                            class="iphone-ring-progress"
+                                            stroke="url(#gradSleep)"
+                                            data-progress="78"/>
+                                </svg>
+                                <h4>Sleep</h4>
+                                <span>6.2h</span>
+                            </div>
+                        </div>
+
+                        <!-- BIG ACTIVITY PIE -->
+                        <div class="app-dashboard-card iphone-section">
+                            <h4 class="app-title">Today’s Activity</h4>
+
+                            <div class="app-pie-wrap">
+                                <svg viewBox="0 0 120 120">
+                                    <circle cx="60" cy="60" r="52" class="app-pie-bg"/>
+                                    <circle cx="60" cy="60" r="52" class="app-pie steps" data-pie="55"/>
+                                    <circle cx="60" cy="60" r="52" class="app-pie hydration" data-pie="25"/>
+                                    <circle cx="60" cy="60" r="52" class="app-pie sleep" data-pie="15"/>
+                                    <circle cx="60" cy="60" r="52" class="app-pie calories" data-pie="30"/>
+                                </svg>
+
+                                <div class="app-pie-center">
+                                    <h2>7,200</h2>
+                                    <span>Steps</span>
+                                </div>
+                            </div>
+
+                            <div class="app-legend">
+                                <span><i class="dot steps-dot"></i> Steps</span>
+                                <span><i class="dot water-dot"></i> Water</span>
+                                <span><i class="dot sleep-dot"></i> Sleep</span>
+                                <span><i class="dot cal-dot"></i> Calories</span>
+                            </div>
+                        </div>
+
+                        <!-- AI SCORE -->
+                        <div class="iphone-ai-card iphone-section">
+                            <h3>AI Health Score</h3>
+                            <div class="iphone-ai-value">82%</div>
+                            <p>Status: Low Risk</p>
+                        </div>
+
+                        <!-- STRESS BAR -->
+                        <div class="iphone-stress iphone-section">
+                            <p>Stress Level</p>
+                            <div class="iphone-stress-bar">
+                                <div class="iphone-stress-fill"></div>
+                            </div>
+                        </div>
+
+                        <!-- 🍽️ AI MEAL PLANNER -->
+                        <div class="iphone-meal-card iphone-section">
+                            <h4>🍽️ AI Meal Planner</h4>
+                            <p>Ultra-personalized meals tuned to your hormones, activity & sleep.</p>
+
+                            <div class="meal-tags">
+                                <span>🥗 Detox</span>
+                                <span>🔥 Fat Burn</span>
+                                <span>💪 Muscle</span>
+                            </div>
+
+                            <button class="contact-doctor-btn"
+                                    type="button"
+                                    id="heroMealConsult">
+                                💬 Ask Dr. Fabiha Sayed
+                            </button>
+                        </div>
+
+                        <!-- 📷 AI MEAL SNAPSHOT (PHOTO ANALYSIS) -->
+                        <div class="iphone-meal-card iphone-section camera-card">
+                            <h4>📷 AI Meal Snapshot</h4>
+                            <p>Snap your plate — AI (coming soon) will estimate calories, protein, carbs & fats.</p>
+
+                            <button class="camera-btn" type="button" id="openMealCamera">
+                                Take Meal Photo
+                            </button>
+
+                            <input type="file"
+                                   accept="image/*"
+                                   id="mealPhotoInput"
+                                   class="meal-file-input">
+
+                            <div class="camera-result" id="mealPhotoResult">
+                                No meal photo selected yet.
+                            </div>
+                        </div>
+
+                    </div> <!-- end .iphone-scroll -->
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+
+    </section>
+
+    <section class="vastor-habits">
+        <h2>Your <span>Daily 15-Minute Reset</span></h2>
+        <p class="habits-subtitle">
+            Small habits, practiced daily, create massive transformation over time.
+            VastoR Health is designed to make these habits effortless.
+        </p>
+
+        <div class="habits-grid">
+
+            <div class="habit-card">
+                <h3>🏃‍♂️ 15-Minute Daily Exercise</h3>
+                <p>
+                    Just 15 minutes of movement boosts heart health, improves sleep,
+                    reduces anxiety, increases energy levels, and strengthens your immunity.
+                </p>
+            </div>
+
+            <div class="habit-card">
+                <h3>📖 Daily Reading Habit</h3>
+                <p>
+                    Reading daily enhances focus, memory, emotional intelligence,
+                    and helps rewire the brain for lifelong learning.
+                </p>
+            </div>
+
+            <div class="habit-card">
+                <h3>🧠 Reduce Social Media</h3>
+                <p>
+                    Lowering screen time reduces stress, comparison anxiety,
+                    distractions, and significantly improves mental clarity.
+                </p>
+            </div>
+
+            <div class="habit-card">
+                <h3>💧 Hydration & Nutrition Tracking</h3>
+                <p>
+                    AI-powered hydration reminders and nutrition guidance help stabilize
+                    mood, improve digestion, and balance hormones.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="coming-soon-banner">
+            ✨ Many more exciting AI-powered wellness features are under development…
+        </div>
+    </section>
+
+    <section class="vastor-roadmap">
+        <h2 class="roadmap-title">AI Feature <span>Roadmap</span></h2>
+        <p class="roadmap-subtitle">
+            VastoR Health is built with a long-term AI vision — here’s what’s coming.
+        </p>
+
+        <div class="roadmap-timeline">
+
+            <!-- ✅ PHASE 1 -->
+            <div class="roadmap-item active">
+                <div class="roadmap-dot"></div>
+                <div class="roadmap-card">
+                    <span class="roadmap-phase">Phase 1 • In Development</span>
+                    <h3>AI Health Dashboard</h3>
+                    <ul>
+                        <li>✔ Real-time step tracking</li>
+                        <li>✔ Sleep & hydration monitoring</li>
+                        <li>✔ Screen-time & focus tracking</li>
+                        <li>✔ Manual + wearable data sync</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ✅ PHASE 2 -->
+            <div class="roadmap-item">
+                <div class="roadmap-dot"></div>
+                <div class="roadmap-card">
+                    <span class="roadmap-phase">Phase 2 • Coming Soon</span>
+                    <h3>AI Meal & Nutrition Engine</h3>
+                    <ul>
+                        <li>🍽 Personalized meal planning</li>
+                        <li>🥗 AI calorie & macro analysis</li>
+                        <li>🧠 Hormone & PCOS nutrition insights</li>
+                        <li>📊 Weekly nutrition reports</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ✅ PHASE 3 -->
+            <div class="roadmap-item">
+                <div class="roadmap-dot"></div>
+                <div class="roadmap-card">
+                    <span class="roadmap-phase">Phase 3 • Under Research</span>
+                    <h3>AI Mental Health Companion</h3>
+                    <ul>
+                        <li>🧠 Mood prediction & emotional mapping</li>
+                        <li>📖 AI guided journaling</li>
+                        <li>💬 Anxiety & burnout risk alerts</li>
+                        <li>🎧 AI sound therapy & meditation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ✅ PHASE 4 -->
+            <div class="roadmap-item future">
+                <div class="roadmap-dot"></div>
+                <div class="roadmap-card">
+                    <span class="roadmap-phase">Phase 4 • Future Vision</span>
+                    <h3>Predictive AI Health Engine</h3>
+                    <ul>
+                        <li>⚡ Disease risk prediction</li>
+                        <li>🧬 Lifestyle longevity scoring</li>
+                        <li>🏥 Doctor-AI hybrid consultation</li>
+                        <li>📡 Smart wearable deep-learning sync</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="vastor-score">
+        <h2 class="score-title">Predictive <span>Health Scoring</span></h2>
+        <p class="score-subtitle">
+            Our upcoming AI engine will analyze your lifestyle patterns and predict
+            future health risks before symptoms begin.
+        </p>
+
+        <div class="score-grid">
+
+            <!-- ✅ MAIN AI SCORE CARD -->
+            <div class="score-card main-score">
+
+                <div class="score-ring">
+                    <svg viewBox="0 0 120 120">
+
+                        <!-- ✅ THIS WAS MISSING (REQUIRED FOR COLOR) -->
+                        <defs>
+                            <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#34d399"/>
+                                <stop offset="100%" stop-color="#60a5fa"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- ✅ BACKGROUND -->
+                        <circle cx="60" cy="60" r="52" class="score-bg"/>
+
+                        <!-- ✅ PROGRESS -->
+                        <circle cx="60" cy="60" r="52" class="score-progress"/>
+
+                    </svg>
+
+                    <div class="score-center">
+                        <h1 id="aiScore">0</h1>
+                        <span>AI Health Score</span>
+                    </div>
+                </div>
+
+                <div class="status-badge status-low" id="riskStatus">
+                    ✅ Low Risk Zone
+                </div>
+
+            </div>
+
+            <!-- ✅ PREDICTION FACTORS -->
+            <div class="score-card score-factors">
+                <h3>Key Prediction Factors</h3>
+
+                <div class="factor">🧠 Mental Focus <span>78%</span></div>
+                <div class="factor">😴 Sleep Quality <span>72%</span></div>
+                <div class="factor">💧 Hydration <span>65%</span></div>
+                <div class="factor">🏃 Physical Activity <span>81%</span></div>
+                <div class="factor">📵 Screen Discipline <span>58%</span></div>
+
+                <p class="ai-note">
+                    These data points will be processed daily using machine learning models.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="score-disclaimer">
+            ⚠️ Predictive health insights are for wellness guidance only — not medical diagnosis.
+        </div>
+    </section>
+
+
+    <section class="vastor-stress">
+
+        <h2 class="stress-title">
+            AI <span>Stress & Burnout</span> Predictor
+        </h2>
+
+        <p class="stress-subtitle">
+            Our AI continuously analyzes your sleep, workload, screen time, emotional patterns
+            and recovery habits to detect stress accumulation before burnout happens.
+        </p>
+
+        <div class="stress-grid">
+
+            <!-- ✅ MAIN STRESS METER -->
+            <div class="stress-card stress-main">
+
+                <div class="stress-meter">
+                    <svg viewBox="0 0 140 140">
+
+                        <!-- ✅ GRADIENT MUST BE INSIDE SVG -->
+                        <defs>
+                            <linearGradient id="stressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#facc15"/>
+                                <stop offset="100%" stop-color="#fb7185"/>
+                            </linearGradient>
+                        </defs>
+
+                        <circle cx="70" cy="70" r="60" class="stress-bg"/>
+                        <circle cx="70" cy="70" r="60" class="stress-fill"/>
+                    </svg>
+
+                    <div class="stress-center">
+                        <h1 id="stressScore">0</h1>
+                        <span>Stress Index</span>
+                    </div>
+                </div>
+
+
+                <div class="status-badge status-moderate" id="stressStatus">
+                    ⚠️ Moderate Stress Detected
+                </div>
+
+            </div>
+
+            <!-- ✅ BURNOUT CONTRIBUTORS -->
+            <div class="stress-card burnout-factors">
+
+                <h3>Burnout Risk Contributors</h3>
+
+                <div class="burn-factor">
+                    😴 Sleep Deprivation <span>High</span>
+                </div>
+
+                <div class="burn-factor">
+                    📱 Screen Overuse <span>Moderate</span>
+                </div>
+
+                <div class="burn-factor">
+                    🧠 Mental Load <span>High</span>
+                </div>
+
+                <div class="burn-factor">
+                    🏃 Physical Inactivity <span>Low</span>
+                </div>
+
+                <div class="burn-factor">
+                    🍽 Nutrition Stability <span>Moderate</span>
+                </div>
+
+                <p class="stress-note">
+                    Burnout prediction is powered by deep learning behavioral analysis.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="stress-warning">
+            ⚠️ This AI tool provides early wellness warnings and is not a medical diagnosis.
+        </div>
+
+    </section>
+
+    <section class="vastor-hormone">
+
+        <h2 class="hormone-title">
+            AI <span>Hormonal Cycle</span> Predictor
+        </h2>
+
+        <p class="hormone-subtitle">
+            Our upcoming AI model will analyze sleep, stress, nutrition, mood and
+            lifestyle patterns to predict hormonal fluctuations and cycle health —
+            especially for women’s wellness & PCOS management.
+        </p>
+
+        <div class="hormone-grid">
+
+            <!-- ✅ MAIN CYCLE PREDICTOR -->
+            <div class="hormone-card">
+
+                <div class="hormone-ring">
+                    <svg viewBox="0 0 140 140">
+
+                        <!-- ✅ ADD THIS GRADIENT -->
+                        <defs>
+                            <linearGradient id="hormoneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fb7185"/>
+                                <stop offset="100%" stop-color="#f472b6"/>
+                            </linearGradient>
+                        </defs>
+
+                        <circle cx="70" cy="70" r="60" class="hormone-bg"/>
+                        <circle cx="70" cy="70" r="60" class="hormone-fill"/>
+                    </svg>
+
+                    <div class="hormone-center">
+                        <h1 id="cycleScore">0</h1>
+                        <span>Cycle Stability</span>
+                    </div>
+                </div>
+
+
+                <div class="status-badge status-low" id="cycleStatus">
+                    ✅ Balanced Cycle Prediction
+                </div>
+
+            </div>
+
+            <!-- ✅ HORMONAL FACTORS -->
+            <div class="hormone-card hormone-factors">
+
+                <h3>AI Cycle Influencing Factors</h3>
+
+                <div class="hormone-factor">😴 Sleep Regularity <span>Good</span></div>
+                <div class="hormone-factor">💧 Hydration Balance <span>Moderate</span></div>
+                <div class="hormone-factor">🧠 Stress Load <span>High</span></div>
+                <div class="hormone-factor">🍽 Nutrition Quality <span>Moderate</span></div>
+                <div class="hormone-factor">🏃 Physical Activity <span>Good</span></div>
+
+                <p class="hormone-note">
+                    Cycle predictions will improve continuously with AI learning.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="hormone-warning">
+            ⚠️ This tool offers wellness insights only and is not a medical diagnosis.
+        </div>
+
+    </section>
+
+
+</section>
+
+<!-- ========================= -->
+<!-- 🍽️ AI COOKING & MEAL DASHBOARD -->
+<!-- ========================= -->
+<section class="ai-cooking-dashboard">
+
+    <div class="cook-header">
+        <h2>What would you like to prepare today?</h2>
+        <p>AI-guided healthy cooking, personalized for your body & lifestyle.</p>
+    </div>
+
+    <!-- ✅ Cuisine Selector -->
+    <div class="cuisine-row">
+        <button class="cuisine active">🇮🇹 Italian</button>
+        <button class="cuisine">🇫🇷 French</button>
+        <button class="cuisine">🇬🇷 Greek</button>
+        <button class="cuisine">🇨🇳 Chinese</button>
+    </div>
+
+    <!-- ✅ Cooking Methods -->
+    <div class="cook-methods">
+        <div class="method-card grill">🔥 Grilling</div>
+        <div class="method-card roast">🍗 Roasting</div>
+        <div class="method-card bake">🥖 Baking</div>
+    </div>
+
+    <!-- ✅ AI Cooking + Meal Cards -->
+    <div class="cook-grid">
+
+        <div class="cook-card green">
+            <h3>Lemon Herb Salmon Salad</h3>
+            <p>High-protein, anti-inflammatory, PCOS-friendly meal</p>
+            <span>45 min • Weight Loss</span>
+
+            <button class="ai-consult-btn"
+                    data-service="Nutrition Consultation"
+                    data-meal="Lemon Herb Salmon Salad">
+                Consult Dr. Fabiha →
+            </button>
+        </div>
+
+        <div class="cook-card yellow">
+            <h3>Healthy Chocolate Oats Pie</h3>
+            <p>Low-sugar dessert for insulin balance</p>
+            <span>45 min • Diabetes Safe</span>
+
+            <button class="ai-consult-btn"
+                    data-service="Nutrition Consultation"
+                    data-meal="Healthy Chocolate Oats Pie">
+                Consult Dr. Fabiha →
+            </button>
+        </div>
+
+        <div class="cook-card pink">
+            <h3>Detox Stir-Fry Bowl</h3>
+            <p>Improves gut health & boosts metabolism</p>
+            <span>30 min • Detox</span>
+
+            <button class="ai-consult-btn"
+                    data-service="Nutrition Consultation"
+                    data-meal="Detox Stir-Fry Bowl">
+                Consult Dr. Fabiha →
+            </button>
+        </div>
+
+    </div>
+
+
+    <!--    &lt;!&ndash; ✅ Meal Nutrition AI &ndash;&gt;-->
+    <!--    <div class="meal-ai-summary">-->
+    <!--        <div class="ai-pill">🥗 Calories Tracked</div>-->
+    <!--        <div class="ai-pill">🧬 Nutrient Deficiency Scan</div>-->
+    <!--        <div class="ai-pill">🩺 PCOS / Thyroid Safe</div>-->
+    <!--        <div class="ai-pill">🧠 Mental Wellness Foods</div>-->
+    <!--    </div>-->
+
+</section>
+
+<!-- ===== PREMIUM FOOTER ===== -->
+<footer class="footer">
+    <link rel="stylesheet" href="style.css">
+    <div class="footer-glass">
+
+        <div class="footer-grid">
+
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <h2>Dr. Fabiha Sayed</h2>
+                <p>
+                    Holistic Homeopathy • Psychology • Nutrition • Telemedicine
+                    Compassionate care for modern lives.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="telemedicine.html">Telemedicine</a>
+                <!--                <a href="blog.html">Blog</a>-->
+                <a href="#appointment">Book Appointment</a>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>📧 kfabiha81@gmail.com</p>
+                <p>📍 United Kingdom</p>
+                <p>🕒 Online Consultations Available</p>
+            </div>
+
+            <!--            &lt;!&ndash; SOCIAL &ndash;&gt;-->
+            <!--            <div class="footer-social">-->
+            <!--                <h3>Connect</h3>-->
+            <!--                <div class="social-icons">-->
+            <!--                    <a href="#" class="social-icon">Twitter</a>-->
+            <!--                    <a href="#" class="social-icon">Instagram</a>-->
+            <!--                    <a href="#" class="social-icon">Facebook</a>-->
+            <!--                    <a href="https://wa.me/447000000000" class="social-icon">WhatsApp</a>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p class="footer-dev">
+                Designed & Developed with ❤️ by <span class="vastor">VastoRLabs</span>
+            </p>
+
+            <p>© 2025 Dr. Fabiha Sayed. All Rights Reserved.</p>
+
+            <!--            <a class="vastor-health-btn" href="vastor-health.html">-->
+            <!--                <i class="fa-solid fa-heart-pulse"></i> Download VastoR Health-->
+            <!--            </a>-->
+
+
+        </div>
+
+
+    </div>
+</footer>
+
+
+<script src="vastor-health.js"></script>
+<script src="app-preview.js"></script>
+</body>
+</html>
