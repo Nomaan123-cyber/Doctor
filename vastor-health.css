@@ -2847,6 +2847,56 @@ body.dark-mode .stay-hydrated span {
     }
 }
 
+
+/* ✅ WELCOME HEADER */
+.iphone-welcome {
+    text-align: left;
+    padding: 6px 6px 2px;
+}
+
+.iphone-welcome h3 {
+    font-size: 15px;
+    font-weight: 900;
+    color: #020617;           /* Light mode */
+    margin: 0;
+}
+
+.iphone-welcome h3 span {
+    background: linear-gradient(135deg,#34d399,#60a5fa);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.iphone-welcome p {
+    font-size: 11px;
+    opacity: 0.65;
+    margin-top: 2px;
+}
+
+/* ✅ DARK MODE FIX */
+.dark-mode .iphone-welcome h3 {
+    color: white;
+}
+
+.dark-mode .iphone-welcome p {
+    color: #cbd5f5;
+}
+.iphone-welcome {
+    animation: fadeWelcome 0.8s ease both;
+}
+
+@keyframes fadeWelcome {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 /* ===============================
 ✅ MOBILE + TABLET OVERVIEW FIX
 =============================== */
