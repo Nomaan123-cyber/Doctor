@@ -2703,52 +2703,98 @@ body.dark-mode .stay-hydrated span {
 📱 MOBILE RESPONSIVE FIX
 =============================== */
 
-@media (max-width: 768px) {
+/* ===========================
+✅ TRUE MOBILE FIX — FINAL
+=========================== */
+@media only screen and (max-width: 768px) {
 
-    /* ✅ HERO LAYOUT STACK FIX */
-    .vastor-hero {
-        padding: 80px 18px !important;
+    body {
+        padding-top: 72px; /* ✅ Prevent navbar overlap */
     }
 
-    .vastor-hero-inner {
+    /* ✅ HERO STACK FIX */
+    .vastor-hero,
+    .dashboard,
+    .hero-section {
+        padding: 70px 16px !important;
+    }
+
+    .vastor-hero-inner,
+    .dashboard-grid,
+    .hero-inner {
         flex-direction: column !important;
+        display: flex !important;
         align-items: center !important;
         text-align: center !important;
-        gap: 48px !important;
+        gap: 42px !important;
     }
 
-    /* ✅ TEXT SCALE FIX */
+    /* ✅ HEADLINE SCALE */
     .dashboard-title,
-    .hero-title {
-        font-size: 34px !important;
+    .hero-title,
+    h1 {
+        font-size: 32px !important;
         line-height: 1.15 !important;
     }
 
     .hero-subtitle,
-    .hero-text {
+    .hero-text,
+    p {
         font-size: 15px !important;
+        line-height: 1.6 !important;
     }
 
-    /* ✅ BUTTONS STACK */
+    /* ✅ BUTTON STACK */
     .hero-buttons {
         flex-direction: column !important;
         width: 100% !important;
         gap: 14px !important;
     }
 
-    .hero-buttons button,
-    .hero-buttons a {
+    .hero-buttons a,
+    .hero-buttons button {
         width: 100% !important;
+        text-align: center;
     }
 
-    /* ✅ iPHONE MOCKUP MOBILE SCALE */
+    /* ✅ FORCE IPHONE TO APPEAR */
     .hero-device,
+    .iphone-frame,
     .iphone-shell {
-        transform: scale(0.82);
-        margin: 0 auto;
+        display: block !important;
+        position: relative !important;
+        transform: none !important;
+        width: 260px !important;
+        margin: 26px auto 0 !important;
+        z-index: 5;
+    }
+
+    /* ✅ KILL DESKTOP OFFSET */
+    .vastor-hero-visual {
+        position: relative !important;
+        right: auto !important;
+        left: auto !important;
+        bottom: auto !important;
+        margin-top: 30px !important;
+    }
+
+    /* ✅ STAY HYDRATED FIX */
+    .stay-hydrated,
+    .hydration-banner {
+        position: relative !important;
+        top: auto !important;
+        margin-top: 18px !important;
+    }
+
+    /* ✅ GRID → STACK */
+    .dashboard-grid,
+    .services-grid,
+    .features-grid {
+        grid-template-columns: 1fr !important;
     }
 
 }
+
 @media (max-width: 768px) {
 
     .navbar {
@@ -2775,3 +2821,91 @@ body.dark-mode .stay-hydrated span {
 }
 
 
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* height of navbar */
+    }
+}
+
+@media (max-width: 768px) {
+    .stay-hydrated,
+    .hydration-banner {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+}
+
+/* ===============================
+✅ MOBILE + TABLET OVERVIEW FIX
+=============================== */
+@media (max-width: 1024px) {
+
+    /* ✅ FORCE SINGLE COLUMN */
+    .dashboard-grid,
+    .health-grid,
+    .overview-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    /* ✅ PREVENT CLIPPING */
+    .dashboard,
+    .overview-section,
+    .vastor-hero,
+    .vastor-hero-inner {
+        overflow: visible !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    /* ✅ CENTER TODAY'S HEALTH CARD */
+    .today-overview,
+    .health-chart-wrapper,
+    .today-health-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    /* ✅ FIX CHART CUT-OFF */
+    .today-overview canvas,
+    .today-overview svg {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+}
+
+/* ===============================
+✅ SMALL PHONE FIX (<= 768px)
+=============================== */
+@media (max-width: 768px) {
+
+    .dashboard-title,
+    .overview-title {
+        font-size: 30px !important;
+    }
+
+    .overview-section {
+        padding: 40px 16px !important;
+    }
+
+    .today-overview {
+        padding: 20px !important;
+        border-radius: 28px !important;
+    }
+
+}
