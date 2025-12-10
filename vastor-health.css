@@ -2,6 +2,21 @@
 /* ✅ GLOBAL BASE */
 /* =============================== */
 
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -2683,5 +2698,80 @@ body.dark-mode .stay-hydrated span {
 🍏 FINAL DARK MODE COLOR & HOVER FIX
 ========================================= */
 
+
+/* ===============================
+📱 MOBILE RESPONSIVE FIX
+=============================== */
+
+@media (max-width: 768px) {
+
+    /* ✅ HERO LAYOUT STACK FIX */
+    .vastor-hero {
+        padding: 80px 18px !important;
+    }
+
+    .vastor-hero-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 48px !important;
+    }
+
+    /* ✅ TEXT SCALE FIX */
+    .dashboard-title,
+    .hero-title {
+        font-size: 34px !important;
+        line-height: 1.15 !important;
+    }
+
+    .hero-subtitle,
+    .hero-text {
+        font-size: 15px !important;
+    }
+
+    /* ✅ BUTTONS STACK */
+    .hero-buttons {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 14px !important;
+    }
+
+    .hero-buttons button,
+    .hero-buttons a {
+        width: 100% !important;
+    }
+
+    /* ✅ iPHONE MOCKUP MOBILE SCALE */
+    .hero-device,
+    .iphone-shell {
+        transform: scale(0.82);
+        margin: 0 auto;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 14px 18px !important;
+    }
+
+    .nav-links {
+        display: none;   /* Optional if you don’t have hamburger */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .dashboard-grid,
+    .features-grid,
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+    }
+
+    .dashboard {
+        padding: 60px 16px !important;
+    }
+}
 
 
