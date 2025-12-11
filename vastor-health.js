@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
        MAIN DASHBOARD PIE (WEB)
     --------------------------- */
     const healthData = {
-        steps: 7200,
+        steps: 7238,
         distance: 5.4,   // km
         calories: 430,
         sleep: 75,       // %
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (stepsRing) {
         stepsRing.style.strokeDasharray = smallCirc;
-        stepsRing.style.strokeDashoffset = smallCirc - (7240 / 10000) * smallCirc;
+        stepsRing.style.strokeDashoffset = smallCirc - (7238 / 10000) * smallCirc;
     }
     if (waterRing) {
         waterRing.style.strokeDasharray = smallCirc;

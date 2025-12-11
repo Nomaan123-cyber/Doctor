@@ -3070,21 +3070,99 @@ body.dark-mode .stay-hydrated span {
 }
 
 /* ✅ WATCH STATUS BAR */
+/*.watch-status-bar {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+
+/*    !* ✅ SAFE AREA FROM CURVED EDGES *!*/
+/*    padding: 2px 8px 0;*/
+
+/*    font-size: 11px;*/
+/*    font-weight: 800;*/
+/*    color: #020617;*/
+
+/*    box-sizing: border-box;*/
+/*}*/
+
+
+/* -----------------------------------------
+   APPLE WATCH STATUS BAR (FINAL FIX)
+------------------------------------------*/
+
 .watch-status-bar {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 4px;
+    margin-top: -2px; /* pulls away from rounded border */
+}
 
-    /* ✅ SAFE AREA FROM CURVED EDGES */
-    padding: 2px 8px 0;
+/*!* Battery container *!*/
+/*.battery-wrapper {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
 
+/*!* Battery outer shape *!*/
+/*.battery-body {*/
+/*    width: 24px;*/
+/*    height: 10px;*/
+/*    border: 1px solid #0b0f1a;*/
+/*    border-radius: 3px;*/
+/*    padding: 1px;*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*!* Fill that JS will animate *!*/
+/*.battery-fill {*/
+/*    height: 100%;*/
+/*    width: 100%;      !* JS will dynamically adjust *!*/
+/*    background: #22c55e;*/
+/*    transition: width 0.4s ease, background 0.4s ease;*/
+/*    border-radius: 2px;*/
+/*}*/
+
+/* Smooth spacing */
+.watch-status-bar span {
+    user-select: none;
+}
+
+/* Left label (VastoR Health) */
+.watch-brand {
     font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-left: 8px;
+    color: #020617;
+}
+
+.watch-brand::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+}
+
+
+
+/* Right time */
+#watchTime {
+    font-size: 12px;
     font-weight: 800;
     color: #020617;
-
-    box-sizing: border-box;
+    padding-right: 10px;
 }
+
 
 
 /* ✅ BATTERY ICON */
@@ -3120,35 +3198,35 @@ body.dark-mode .stay-hydrated span {
 /*}*/
 
 /* ✅ WATCH BATTERY — NO PERCENT, NO CAP, COLOR BY LEVEL */
-.battery-icon {
-    --battery-level: 0.75;              /* fallback if JS not available */
-    --battery-color: #22c55e;           /* default green */
+/*.battery-icon {*/
+/*    --battery-level: 0.75;              !* fallback if JS not available *!*/
+/*    --battery-color: #22c55e;           !* default green *!*/
 
-    display: inline-block;
-    width: 16px;
-    height: 8px;
-    border: 1.5px solid #020617;
-    border-radius: 3px;
-    position: relative;
-    box-sizing: border-box;
-}
+/*    display: inline-block;*/
+/*    width: 16px;*/
+/*    height: 8px;*/
+/*    border: 1.5px solid #020617;*/
+/*    border-radius: 3px;*/
+/*    position: relative;*/
+/*    box-sizing: border-box;*/
+/*}*/
 
 /* ✅ REMOVE CAP COMPLETELY */
-.battery-icon::after {
-    content: none;
-}
+/*.battery-icon::after {*/
+/*    content: none;*/
+/*}*/
 
 /* ✅ FILL WIDTH & COLOR DRIVEN BY CSS VARS */
-.battery-icon::before {
-    content: "";
-    position: absolute;
-    left: 1px;
-    top: 1px;
-    height: 4px;
-    width: calc(var(--battery-level) * 100% - 2px);
-    background: var(--battery-color);
-    border-radius: 2px;
-}
+/*.battery-icon::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    left: 1px;*/
+/*    top: 1px;*/
+/*    height: 4px;*/
+/*    width: calc(var(--battery-level) * 100% - 2px);*/
+/*    background: var(--battery-color);*/
+/*    border-radius: 2px;*/
+/*}*/
 
 /* ✅ WELCOME TEXT */
 .watch-welcome {
@@ -3246,6 +3324,47 @@ body.dark-mode .stay-hydrated span {
 /*    margin-left: 0 !important;*/
 /*}*/
 
+/*.device-showcase {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    gap: 140px;*/
+/*    position: relative;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*.iphone-frame,*/
+/*.watch-wrapper {*/
+/*    position: relative !important;*/
+/*    z-index: 2;*/
+/*}*/
+
+/*.watch-wrapper {*/
+/*    margin: 0 !important;*/
+/*}*/
+
+@media (max-width: 1024px) {
+    .device-showcase {
+        gap: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .device-showcase {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .iphone-frame {
+        transform: scale(0.9);
+    }
+
+    .watch-wrapper {
+        transform: scale(0.85);
+    }
+}
+
+
 /* ✅ MOBILE STACK MODE */
 @media (max-width: 900px) {
     .device-showcase {
@@ -3305,3 +3424,40 @@ body.dark-mode .stay-hydrated span {
 #watchStepsValue {
     transition: all 0.2s ease;
 }
+
+.device-showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 140px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+    .device-showcase {
+        gap: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .device-showcase {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .iphone-frame {
+        transform: scale(0.88);
+    }
+
+    .watch-wrapper {
+        transform: scale(0.85);
+    }
+}
+
+/*.watch-status-bar {*/
+/*    width: 100%;*/
+/*    padding: 0 8px;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
