@@ -136,64 +136,63 @@ END:VCALENDAR`;
 // ===============================
 
 // ✅ 1. DEFINE UK BASE TIME SLOTS (24-hour, UK TIME)
-const ukTimeSlots = [
-    "10:00",
-    "12:00",
-    "15:00",
-    "18:00"
+// 1. DEFINE UK BASE SLOTS
+const ukTimeSlots = ["10:00", "12:00", "15:00", "18:00"];
+
+const regions = [
+    { name: "UK (GMT/BST)", zone: "Europe/London", flag: "🇬🇧" },
+    { name: "India (IST)", zone: "Asia/Kolkata", flag: "🇮🇳" },
+    { name: "USA/Canada (ET)", zone: "America/New_York", flag: "🇺🇸🇨🇦" }
 ];
 
-// ✅ 2. GET ELEMENTS
-const timeSelect = document.getElementById("timeSlotSelect");
-const slotUK = document.getElementById("slotUK");
-const slotLocal = document.getElementById("slotLocal");
-
-// ✅ 3. TRUE UK → LOCAL TIME CONVERSION
-function convertUKtoLocal(ukTime) {
-    const userTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
+function getRegionalTimes(ukHourStr) {
     const now = new Date();
-    const [hour, minute] = ukTime.split(":").map(Number);
+    const [hours, minutes] = ukHourStr.split(':');
 
-    // ✅ Create UK-based time safely
-    const ukDate = new Date(
-        now.toLocaleString("en-GB", { timeZone: "Europe/London" })
-    );
-
-    ukDate.setHours(hour, minute, 0, 0);
-
-    // ✅ Convert to local browser timezone
-    const localDate = new Date(
-        ukDate.toLocaleString("en-US", { timeZone: userTZ })
-    );
-
-    return {
-        uk: ukDate.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }),
-        local: localDate.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" }),
-        tz: userTZ
-    };
-}
-
-// ✅ 4. POPULATE DROPDOWN
-if (timeSelect && ukTimeSlots.length > 0) {
-    ukTimeSlots.forEach(time => {
-        const converted = convertUKtoLocal(time);
-
-        const option = document.createElement("option");
-        option.value = `${converted.uk} UK → ${converted.local}`;
-        option.textContent = `${converted.uk} UK → ${converted.local} (Your Time)`;
-
-        timeSelect.appendChild(option);
+    // Create a date object anchored to the UK time for today
+    const formatter = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/London',
+        year: 'numeric', month: 'numeric', day: 'numeric',
+        hour: 'numeric', minute: 'numeric', hour12: false
     });
 
-    // ✅ 5. STORE HIDDEN VALUES FOR EMAIL
-    timeSelect.addEventListener("change", () => {
-        const selected = timeSelect.value;
-        const parts = selected.split("→");
+    const parts = formatter.formatToParts(now);
+    const d = {};
+    parts.forEach(p => d[p.type] = p.value);
 
-        if (parts.length === 2) {
-            slotUK.value = parts[0].trim();
-            slotLocal.value = parts[1].trim();
-        }
+    // Create the "Target UK Time" as a Date object
+    // We use the Intl.DateTimeFormat string trick to ensure we are hitting the right UK moment
+    const ukTimeAtAppointment = new Date(`${d.year}-${d.month}-${d.day}T${hours}:${minutes}:00Z`);
+
+    // Because we added 'Z', we must adjust by the current UK offset to make it "True London Time"
+    const londonOffset = new Date().toLocaleString("en-US", {timeZone: "Europe/London", timeZoneName: "short"}).split(" ").pop();
+
+    return regions.map(region => {
+        const timeString = new Intl.DateTimeFormat('en-US', {
+            timeZone: region.zone,
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        }).format(ukTimeAtAppointment);
+
+        return `${region.flag} ${region.name}: ${timeString}`;
+    });
+}
+
+// 2. POPULATE THE DROPDOWN
+const timeSelect = document.getElementById("timeSlotSelect");
+
+if (timeSelect) {
+    timeSelect.innerHTML = '<option value="" disabled selected>Select an International Slot</option>';
+
+    ukTimeSlots.forEach(ukTime => {
+        const convertedTimes = getRegionalTimes(ukTime);
+        const option = document.createElement("option");
+
+        // Show UK and India in the main label, others in the background
+        option.textContent = `🇬🇧 ${ukTime} UK → 🇮🇳 ${convertedTimes[1].split(': ')[1]} IST (US/CA: ${convertedTimes[2].split(': ')[1]})`;
+        option.value = convertedTimes.join(" | ");
+
+        timeSelect.appendChild(option);
     });
 }
